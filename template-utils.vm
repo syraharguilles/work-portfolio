@@ -1,0 +1,51 @@
+#if("" == "$!showUnsubLinks")
+    #set( $showUnsubLinks = true )
+#end
+
+#if("" == "$!browserViewEnabled")
+    #set( $browserViewEnabled = true )
+#end
+
+#macro( putDefault $option $key $customDefault )
+	#if( "" == "$!option[$key]" )
+		#set( $option[$key] = $!customDefault )
+	#end
+#end
+
+#macro( coalesce $value1 $value2 )
+#if( "" != "$!value1" )
+$!value1
+#else
+$!value2
+#end
+#end
+
+#macro ( defaultLogoSrc )
+## default value ##
+#set ( $logoImg = "https://$legalmatch.serverName/images/email/logo/legalmatch-logo.png" )
+#if ( $recipient.isConsumer() )
+#set ( $logoImg = "https://$legalmatch.serverName/images/email/logo/legalmatch-logo-w-slogan.png" )
+#end
+$logoImg
+#end
+
+## LMS-11422 - Preheader Macros
+#macro( preHeader $preHeaderContent $defaultPreHeaderContent )
+
+<!-- Block Pre-Header -->
+	<span style="display:none !important;visibility:hidden;mso-hide:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">#if ( "" != "$!preHeaderContent" ) $!preHeaderContent #else $!defaultPreHeaderContent #end </span>
+<!-- Block Pre-Header -->
+
+#end ##preHeader
+
+#macro(multipleParagraph $title $paragraphs)
+	#if ( $paragraphs.size() > 0 )
+		<p>$!title</p>
+	#end
+
+	#foreach( $paragraph in $paragraphs )
+		#if ( $!paragraph.trim().length() > 0 )
+			<p>$!paragraph</p>
+		#end
+	#end
+#end

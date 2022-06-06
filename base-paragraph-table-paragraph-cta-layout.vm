@@ -1,0 +1,390 @@
+#parse("/Emails/Template/base/template-utils.vm")
+#parse("/notification/email/macros/address.vm")
+
+#macro( baseParagraphTableParagraphCtaLayout $config )
+<!doctype html>
+
+	#if( "" == "$!config" )
+		#set( $config = {} )
+	#end
+
+	#set ( $defaultLogo = "#defaultLogoSrc()" )
+	#set ( $defaultLink = "https://$legalmatch.serverName" )
+	#set ( $defaultAlt = "LegalMatch" )
+
+	#putDefault( $config, "title", "Paragraph Table CTA Layout" )
+	#putDefault( $config, "preheader-text", "" )
+	#putDefault( $config, "logo-section", {
+		"show": true,
+		"img-alt": "#coalesce($emailLogoTitle, $defaultAlt)", 
+		"img-src": "#coalesce($emailLogo, $defaultLogo)",
+		"url": "#coalesce($emailLogoLink, $defaultLink)"
+	} )	
+	#putDefault( $config, "salutation-section", {
+		"show": true,
+		"content": "Dear first name,"
+	} )	
+	#putDefault( $config, "pre-paragraph-section", {
+		"show": true,
+		"content-list": [
+			"A new case has just been posted in your area"
+		]
+	} )
+	#putDefault( $config, "table-section", {
+		"show": true,
+		"list": [
+			{
+				"heading": "Summary:",
+				"content": "Common law marriage divorce custody domestic viol"
+			},
+			{
+				"heading": "Description:",
+				"content": "Case description"
+			},
+			{
+				"heading": "Legal assistance needed in:",
+				"content": "Golden, CO"
+			}
+		]
+	} )
+	#putDefault( $config, "post-paragraph-section", {
+		"show": true,
+		"content-list": [
+			"A new case has just been posted in your area"
+		]
+	} )
+	#putDefault( $config, "button-section", {
+		"show": true,
+		"content": "Button",
+		"url": "https://www.legalmatch.com/"
+	} )
+	#putDefault( $config, "signature-section", {
+		"show": true,
+		"content-list": [ 
+			"Thank you!",
+			"- The LegalMatch Team"
+		]
+	} )
+	#putDefault( $config, "upper-footer-section", {
+		"show": $showUnsubLinks,
+		"content-1": "Want to change how you receive these emails?",
+		"content-2": "You can <a href='$!managePreferencesURL' style='color: #337ab7; text-decoration: underline'><font color='#337ab7'>update your preferences</font></a> or <a href='$!unsubEmailURL' style='color: #337ab7; text-decoration: underline'><font color='#337ab7'>unsubscribe from this email</font></a>"
+	} )
+	#putDefault( $config, "lower-footer-section", {
+		"show": true,
+		"content-1": "#address( $config.address )",
+		"content-2": "If you cannot read this email properly, please <a href='$!previewLink' style='color: #337ab7; text-decoration: underline'><font color='#337ab7'>click here</font></a>"
+	} )
+
+	#* Custom Blocks *#
+	#putDefault( $config, "logo-block", "" )
+	#putDefault( $config, "salutation-block", "" )
+	#putDefault( $config, "pre-paragraph-block", "" )
+	#putDefault( $config, "table-block", "" )
+	#putDefault( $config, "post-paragraph-block", "" )
+	#putDefault( $config, "button-block", "" )
+	#putDefault( $config, "signature-block", "" )
+	#putDefault( $config, "upper-footer-block", "" )
+	#putDefault( $config, "lower-footer-block", "" )
+
+	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+	<head>
+	<meta name="x-apple-disable-message-reformatting">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>$!config.title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		.hide_desktop{
+			display: none !important;
+		}
+		
+		@media only screen and (max-width: 480px) {
+			.hide_mobile{
+				display: none !important;
+			}
+
+			.hide_desktop{
+				display: block !important;
+				padding: 5px 16px !important;
+			}
+
+			.column_container_td{
+				padding: 0 !important;
+			}
+
+			.padding_mobile{
+				display: block !important;
+				padding: 5px 16px !important;
+			}
+
+			.background_mobile-blue{
+				background-color: #f1faff !important;
+			}
+
+			.background_mobile-white{
+				background-color: #ffffff !important;
+			}
+
+			.column_container {
+				display: block !important;
+				max-width: 560px !important;
+				width: 100% !important;
+			}
+
+			.padding_left-20 {
+				padding-left: 20px !important;
+			}
+
+			.padding_right-20 {
+				padding-right: 20px !important;
+			}
+		}
+	</style>
+	</head>
+	<body bgcolor="#f2f2f2" height="100%" leftmargin="0" marginheight="0" marginwidth="0" offset="0" topmargin="0" width="100%" style="margin: 0; padding: 0;">
+		#preHeader( $config.preheader-text )
+		<center>
+			<table align="center" bgcolor="#f2f2f2" border="0" cellpadding="0" cellspacing="0" class="body_table" height="100%" width="100%" style="border-color: transparent; border-collapse: collapse; height: 100%; margin: 0; padding: 0; width: 100%;" role="presentation"> 
+				<tbody>
+					<tr>
+						<td align="center" class="body_cell" height="100%" valign="top" width="100%" style="margin: 0; padding: 30px 0 30px 0;">
+							<!-- BEGIN TEMPLATE -->
+							<table border="0" cellpadding="0" cellspacing="0" class="template_container" width="600" style="border-collapse: collapse; border-color: transparent; max-width: 600px; width: 100%;" role="presentation">
+								<tbody>
+									<!-- Padding Top -->
+									<tr>
+										<td bgcolor="#ffffff" style="padding-top: 50px;"></td>
+									</tr>
+									<!-- Padding Top -->
+									#logo( $config.logo-section, $config.logo-block )
+									#salutation( $config.salutation-section, $config.salutation-block )
+									#preParagraph( $config.pre-paragraph-section, $config.pre-paragraph-block )
+									#table( $config.table-section, $config.table-block )
+									#postParagraph( $config.post-paragraph-section, $config.post-paragraph-block )
+									#button( $config.button-section, $config.button-block )
+									#signature( $config.signature-section, $config.signature-block )
+									<!-- Padding Bottom -->
+									<tr>
+										<td bgcolor="#ffffff" style="padding-bottom: 54px;"></td>
+									</tr>
+									<!-- Padding Bottom -->
+									#upperFooter( $config.upper-footer-section, $config.upper-footer-block )
+									#lowerFooter( $config.lower-footer-section, $config.lower-footer-block )
+								</tbody>
+							</table>
+							<!-- END TEMPLATE -->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
+	</body>
+	</html>
+
+	#macro( logo $logoSection $logoBlock )
+		#if ( "" != "$!logoBlock" )
+			$logoBlock
+		#else
+			#if ( "true" == "$!logoSection.show" )
+				<!-- Block Logo -->
+				<tr>
+					<td align="left" bgcolor="#ffffff" class="padding_left-20 padding_right-20" valign="top" style="padding: 0 51px 41px 51px;">
+						<a href="$!logoSection.url" target="_blank"><img border="0" alt="$!logoSection.img-alt" src="$!logoSection.img-src" width="191" style="height: auto; max-width: 191px;"></a>
+					</td>
+				</tr>
+				<!-- Block Logo -->
+			#end
+		#end
+	#end
+
+	#macro( salutation $salutationSection $salutationBlock )
+		#if ( "" != "$!salutationBlock" )
+			$salutationBlock
+		#else
+			#if ( "true" == "$!salutationSection.show" )
+				<!-- Block Salutation -->
+				<tr>
+					<td align="left" bgcolor="#ffffff" class="padding_left-20 padding_right-20" valign="top" style="color: #656565; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; padding: 0 51px 22px; text-align: left;">
+						$!salutationSection.content
+					</td>  
+				</tr>
+				<!-- Block Salutation -->
+			#end
+		#end
+	#end
+
+	#macro( preParagraph $preParagraphSection $preParagraphBlock )
+		#if ( "" != "$!preParagraphBlock" )
+			$preParagraphBlock
+		#else
+			#if ( "true" == "$!preParagraphSection.show" )
+				<!-- Block Pre Paragraph -->
+				#foreach( $item in $preParagraphSection.content-list )
+					#if ( $!item.trim().length() > 0 )
+						<tr>
+							<td align="left" bgcolor="#ffffff" class="padding_left-20 padding_right-20" valign="top" style="color: #656565; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; padding: 0 51px 26px; text-align: left;">
+								$!item
+							</td>  
+						</tr>
+					#end
+				#end
+				<!-- Block Pre Paragraph -->
+			#end
+		#end
+	#end
+
+	#macro( table $tableSection $tableBlock )
+		#if ( "" != "$!tableBlock" )
+			$tableBlock
+		#else
+			#if ( "true" == "$!tableSection.show" )
+				<!-- Block Table -->
+				<tr>
+					<td align="center" bgcolor="#ffffff" class="padding_left-20 padding_right-20" valign="top" style="padding: 0 51px 35px;">
+						<table border="0" cellpadding="0" cellspacing="0" width="100%"
+							style="border-collapse: collapse; border: 1px solid #ddebf3;" role="presentation">
+							<tbody>
+								#foreach( $item in $tableSection.list )
+									<tr>
+										<td #if( $velocityCount % 2 == 0 ) bgcolor="#ffffff" #else bgcolor="#f1faff" #end class="column_container" valign="top" width="149px">
+											<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border-color: transparent; max-width: 498px;" role="presentation">
+												<tr>
+													<td align="left" class="padding_mobile column_container_td" style="color: #656565; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; padding: 10px 16px; text-align: left;">
+														$!item.heading
+													</td>
+												</tr>
+											</table>
+										</td>
+										<td #if( $velocityCount % 2 == 0 ) bgcolor="#ffffff" #else bgcolor="#f1faff" #end class="column_container" valign="top" width="347px">
+											<table border="0" cellpadding="0" cellspacing="0" width="100%"
+												style="border-collapse: collapse; border-color: transparent;" role="presentation">
+												<tr>
+													<td align="left" class="padding_mobile column_container_td" style="color: #656565; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; padding: 10px 16px; text-align: left;">
+														$!item.content
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								#end
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<!-- Block Table -->
+			#end
+		#end
+	#end
+
+	#macro( postParagraph $postParagraphSection $postParagraphBlock )
+		#if ( "" != "$!postParagraphBlock" )
+			$postParagraphBlock
+		#else
+			#if ( "true" == "$!postParagraphSection.show" )
+				<!-- Block Post Paragraph -->
+				#foreach( $item in $postParagraphSection.content-list )
+					#if ( $!item.trim().length() > 0 )
+						<tr>
+							<td align="left" bgcolor="#ffffff" class="padding_left-20 padding_right-20" valign="top" style="color: #656565; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; padding: 0 51px 26px; text-align: left;">
+								$!item
+							</td>  
+						</tr>
+					#end
+				#end
+				<!-- Block Post Paragraph -->
+			#end
+		#end
+	#end
+
+	#macro( button $buttonSection $buttonBlock )
+		#if ( "" != "$!buttonBlock" )
+			$buttonBlock
+		#else
+			#if ( "true" == "$!buttonSection.show" )
+				<!-- Block Button -->
+				<tr>
+					<td align="center" bgcolor="#ffffff" valign="top" style="padding-bottom: 35px; padding-top: 13px;">
+						<table border="0" cellpadding="0" cellspacing="0" width="250" style="border-collapse: collapse; border-color: transparent; max-width: 210px;" role="presentation">
+							<tbody>
+								<tr>
+									<td align="center" bgcolor="#02397b" style="padding: 18px 22px; ">
+										<a href="$!buttonSection.url" style="color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 19px; padding-bottom: 18px; padding-top: 18px; text-decoration: none;"><font color="#ffffff">$!buttonSection.content</font></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<!-- Block Button -->
+			#end
+		#end
+	#end
+
+	#macro( signature $signatureSection $signatureBlock )
+		#if ( "" != "$!signatureBlock" )
+			$signatureBlock
+		#else
+			#if ( "true" == "$!signatureSection.show" )
+				<!-- Block Signature -->
+				#foreach( $item in $signatureSection.content-list )
+					<tr>
+						<td align="left" bgcolor="#ffffff" class="padding_left-20 padding_right-20" valign="top" style="color: #656565; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; padding: 0 51px 0; text-align: left;">
+							$!item
+						</td>  
+					</tr>
+				#end
+				<!-- Block Signature -->
+			#end
+		#end
+	#end
+
+	#macro( upperFooter $upperFooterSection $upperFooterBlock )
+		#if ( "" != "$!upperFooterBlock" )
+			$upperFooterBlock
+		#else
+			#if ( "true" == $!upperFooterSection.show )
+				<!-- Block Upper Footer -->
+				<tr>
+					<td align="center" class="padding_left-20 padding_right-20" style="color: #7b7b7b; font-family: Helvetica, Arial, sans-serif; font-size: 12px; padding-bottom: 2px; padding-top: 29px;">$!upperFooterSection.content-1</td>
+				</tr>
+				<tr>
+					<td align="center" class="padding_left-20 padding_right-20" style="color: #7b7b7b; font-family: Helvetica, Arial, sans-serif; font-size: 12px; padding-bottom: 2px; padding-top: 1.5px;">$!upperFooterSection.content-2</td>
+				</tr>
+				<!-- Block Upper Footer -->
+			#end
+		#end
+	#end
+
+	#macro( lowerFooter $lowerFooterSection $lowerFooterBlock )
+		#if ( "" != "$!lowerFooterBlock" )
+			$lowerFooterBlock
+		#else
+			#if ( "true" == $!lowerFooterSection.show )
+				<!-- Block Lower Footer -->
+				<tr>
+					<td align="center" class="padding_left-20 padding_right-20" style="color: #7b7b7b; cursor: text; font-family: Helvetica, Arial, sans-serif; font-size: 12px; padding-bottom: 2px; padding-top: 1.5px;">
+						<!--[if mso]>
+						<font color="#7b7b7b" style="text-decoration: none;">
+						<![endif]-->
+						<a href="" style="color: #7b7b7b; cursor:text; text-decoration: none;">
+							$lowerFooterSection.content-1
+						</a>
+						<!--[if mso]>
+						</font>
+						<![endif]-->
+					</td>
+				</tr>
+
+				<!-- BLOCK Cannot read --> 
+				#if( $browserViewEnabled )
+				<tr>
+					<td align="center" class="padding_left-20 padding_right-20" style="color: #7b7b7b; font-family: Helvetica, Arial, sans-serif; font-size: 12px; padding-bottom: 2px; padding-top: 1.5px;">$lowerFooterSection.content-2</td>
+				</tr>
+				#end
+				<img src="https://$legalmatch.serverName/home/etrackNotification?mailtix=$!mailToken" width="1" height="1"/>
+				<!-- BLOCK Cannot read -->
+				<!-- Block Lower Footer -->
+			#end
+		#end
+	#end
+#end

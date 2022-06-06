@@ -1,0 +1,64 @@
+#parse("/notification/base/email/base-paragraph-table-paragraph-cta-layout.vm")
+
+#set ( $options = {
+	"address": $address,
+	"title": "Paragraph Table CTA Layout",
+	"preheader-text": "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.​​",
+	"salutation-section": {
+		"show": true,
+		"content": "Dear first name,"
+	},	
+	"pre-paragraph-section": {
+		"show": true,
+		"content-list": [
+			"A new case has just been posted in your area"
+		]
+	},	
+	"table-section": {
+		"show": true,
+		"list": [
+			{
+				"heading": "Summary:",
+				"content": "Common law marriage divorce custody domestic viol"
+			},
+			{
+				"heading": "Description:",
+				"content": "Case description"
+			},
+			{
+				"heading": "Legal assistance needed in:",
+				"content": "Golden, CO"
+			}
+		]
+	},
+	"post-paragraph-section": {
+		"show": true,
+		"content-list": [
+			"A new case has just been posted in your area"
+		]
+	},
+	"button-section": {
+		"show": true,
+		"content": "VIew Case",
+		"url": "https://www.legalmatch.com/"
+	},
+	"signature-section": {
+		"show": true,
+		"content-list": [
+			"Thank you!",
+			"- The LegalMatch Team"
+		]
+	},
+	"upper-footer-section": {
+		"show": true,
+		"content-1": "Want to change how you receive these emails?",
+		"content-2": "You can <a href='$!managePreferencesURL' style='color: #337ab7; text-decoration: underline'><font color='#337ab7'>update your preferences</font></a> or <a href='$!unsubEmailURL' style='color: #337ab7; text-decoration: underline'><font color='#337ab7'>unsubscribe from this email</font></a>"
+	},
+	"lower-footer-section": {
+		"show": true,
+		"content-1": "#address( $config.address )",
+		"content-2": "If you cannot read this email properly, please <a href='$!previewLink' style='color: #337ab7; text-decoration: underline'><font color='#337ab7'>click here</font></a>"
+	}
+} )
+
+#baseParagraphTableParagraphCtaLayout( $options )
