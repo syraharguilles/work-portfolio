@@ -1,0 +1,27 @@
+.page {
+	@include font-with-fallback(Gotham-Book, 15px);
+
+	color: #232222;
+}
+
+.page__h1 {
+	@include font-with-fallback(Gotham-Medium);
+	@include poly-fluid-sizing('font-size', (get-bp(tn): 24px, get-bp(sm): 35px));
+
+	color: #232222;
+	font-weight: normal;
+	margin: 0;
+	padding-top: 25px;
+}
+
+.page__p {
+	@include poly-fluid-sizing('padding-top', (get-bp(tn): 20px, get-bp(sm): 25px));
+
+	margin: 0;
+}
+
+.page__ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

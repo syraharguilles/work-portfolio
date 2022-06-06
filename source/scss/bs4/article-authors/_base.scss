@@ -1,0 +1,104 @@
+.article-authors {
+	padding-bottom: 30px;
+	padding-top: 30px;
+}
+
+.article-authors__bio {
+	padding-top: 23px;
+}
+
+.article-authors__details {
+	@include font-size(13px);
+	
+	flex-basis: 200px;
+	flex-grow: 1;
+	flex-shrink: 0;
+	padding-right: 20px;
+}
+
+.article-authors__icons {
+	@include media-breakpoint-between(null, sm) {
+		margin-left: 60px;
+	}
+}
+
+.article-authors__item {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.article-authors__name {
+	@include font-with-fallback(Gotham-Medium);
+
+	margin: 0;
+
+	a {
+		color: $primary;
+		text-decoration: underline;
+
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
+}
+
+.article-authors__padding-top {
+	padding-top: 30px;
+}
+
+.article-authors__separator {
+	background-color: #ededed;
+	border: none;
+	height: 41px;
+	width: 1px;
+	
+	@include media-breakpoint-down(sm) {
+		display: none;
+	}
+}
+
+.article-authors__name-position {
+	align-self: center;
+}
+
+.article-authors__status {
+	@include font-with-fallback(Gotham-Medium, 13px);
+	
+	color: #aeaeae;
+	margin: 0;
+}
+
+.article-authors__userpic {
+	flex-basis: 50px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	margin-right: 10px;
+	position: relative;
+
+	img {
+		border-radius: 50%;
+		height: 50px;
+		max-width: 50px;
+		object-fit: cover;
+		position: relative;
+		width: 100%;
+		z-index: 2;
+	}
+
+	&:before {
+		@include icon($fa-var-user-secret, 32px);
+
+		color: rgba(0, 0, 0, .2);
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		z-index: 1;
+	}
+}	
+
+.article-authors__position {
+	margin: 0;
+	white-space: normal;
+}

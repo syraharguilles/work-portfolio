@@ -1,0 +1,17 @@
+@import "bs4/root";
+
+@import "@bootstrap/scss/dropdown";
+@import "@bootstrap/scss/grid";
+@import "@bootstrap/scss/modal";
+@import "bs4/common-critical";
+@import "bs4/override";
+
+@import "common/montserrat";
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

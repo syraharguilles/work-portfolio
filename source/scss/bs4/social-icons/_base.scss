@@ -1,0 +1,90 @@
+@mixin social-icon($background, $icon) {
+	background: $background;
+	&:after {
+		content: $icon;
+	}
+}
+
+.social-icons {
+	align-items: center;
+	display: flex;
+	flex-shrink: 0;
+	height: $c-social-icon-size;
+}
+
+.social-icons__item {
+	border-radius: 50%;
+	color: $white;
+	display: inline-block;
+	height: $c-social-icon-size;
+	min-width: $c-social-icon-size;
+	text-align: center;
+	text-decoration: none;
+	width: auto;
+
+	&:after {
+		@include font-size(13px);
+		@include size(100%, 100%);
+		display: block;
+		font-family: FontAwesome;
+		line-height: $c-social-icon-size;
+	}
+
+	&:hover {
+		color: $white;
+		text-decoration: none;
+	}
+
+	&:not(:last-child) {
+		margin-right: 10px;
+	}
+
+    &-facebook,
+	&[href*="facebook"] {
+		@include social-icon(#3b5998, $fa-var-facebook);
+	}
+
+    &-twitter,
+	&[href*="twitter"] {
+		@include social-icon(#55acee, $fa-var-twitter);
+	}
+
+	&[href*="plus.google"] {
+		@include social-icon(#dd5044, $fa-var-google-plus);
+	}
+
+    &-linkedin,
+	&[href*="linkedin"] {
+		@include social-icon(#007bb6, $fa-var-linkedin);
+	}
+
+	&[href*="linkedin"] {
+		@include social-icon(#007bb6, $fa-var-linkedin);
+	}
+}
+
+.PLAN-2688__variant .social-icons__item {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0 12px 0 8px;
+    border-radius: 24px;
+    font-size: 0.8rem;
+    line-height: 24px;
+    cursor: pointer;
+    
+    &:after {
+        margin-right: 6px;
+    }
+    &-facebook,
+    &-twitter,
+    &-linkedin {
+        color: $white !important;
+    }
+}
+
+.social-icons__item-other-url {
+	background: #adb5bd;
+	&:after {
+		content: "\f0ac";
+	}
+}

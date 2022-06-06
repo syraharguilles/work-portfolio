@@ -1,0 +1,23 @@
+.pagination {
+    padding-top: 41px;
+    text-align: center;
+    width: 100%;
+}
+
+.pagination__button {
+    padding: 0 14px;
+}
+
+.pagination__select {
+    display: inline-block;
+}
+
+.pagination__total-pages {
+    @include font-with-fallback('Gotham-Medium', 13px);
+
+    color: #80868b;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 8px;
+}

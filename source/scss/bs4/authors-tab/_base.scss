@@ -1,0 +1,45 @@
+.authors__tab {
+	padding-top: 30px;
+	text-align: center;
+}
+
+.authors__tab-item {
+	@include font-with-fallback(Gotham-Medium, 14px);
+
+	border: 2px solid #dddddd;
+	color: #3379b7;
+	cursor: pointer;
+	padding:5px 10px;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&.is-selected {
+		border: 2px solid #3379b7;
+		background-color: #3379b7;;
+		color: #fff;
+		cursor: default;
+		pointer-events: none;
+	}
+}
+
+.author__current-tab {
+	border-radius: 6px 0 0px 6px;
+	border-right: 0;
+
+	@include media-breakpoint-up(sm) {
+		padding-left: 23px;
+		padding-right: 15px;
+	}
+}
+
+.author__previous-tab {
+	border-radius: 0 6px 6px 0;
+	border-left: 0;
+
+	@include media-breakpoint-up(sm) {
+		padding-left: 15px;
+		padding-right: 23px;
+	}
+}

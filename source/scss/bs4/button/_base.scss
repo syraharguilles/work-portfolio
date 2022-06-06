@@ -1,0 +1,29 @@
+.button {
+    @include font-with-fallback('Gotham-Medium', 13px);
+
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 3px;
+    color: #337ab7;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    line-height: 38px;
+	padding: 0 30px;
+	text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.button--blue {
+    background-color: #337ab7;
+    border: 0;
+    color: #fff;
+}
+
+.button--deactivated {
+    color: #dcdee1;
+}

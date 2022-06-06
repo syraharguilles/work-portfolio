@@ -1,0 +1,43 @@
+$c-social-icon-size: 32px;
+
+@import "bs4.base";
+@import "bs4.explore-lm";
+@import "bs4.footer-authorspage";
+@import "bs4.header";
+
+@import "bs4/other-categories/base";
+@import "bs4/general-subcats-modal/base";
+@import "bs4/modal-generic/base";
+
+@import "bem/sticky-header/lawlib";
+
+@import "bs4/authors/base";
+@import "bs4/authors-item/base";
+@import "bs4/authors-list/base";
+@import "bs4/authors-tab/base";
+@import "bs4/breadcrumbs/base";
+@import "bs4/button/base";
+@import "bs4/dropdown/base";
+@import "bs4/pagination/base";
+@import "bs4/page/authors";
+@import "bs4/readmore-readless/base";
+@import "bs4/social-icons/base";
+
+.authors__container { 
+	background-color: #fff;
+	padding: 15px;
+
+		@include media-breakpoint-up(sm) {
+			padding: 35px;
+		}
+}
+
+.container {
+    @include media-breakpoint-down(ss) {
+        max-width: none;
+    }
+
+    @include media-breakpoint-only(md) {
+        max-width: 944px !important;
+    }
+}

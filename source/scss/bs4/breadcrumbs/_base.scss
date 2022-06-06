@@ -1,0 +1,30 @@
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs__item {
+  @include font-size(13px);
+  display: inline-block;
+  list-style: none;
+  &:not(:first-child):before {
+    content: '>';
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.breadcrumbs__item.is-current {
+  @include font-size(21px);
+  display: block;
+  &:before {
+    display: none;
+  }
+}
+
+.breadcrumbs__link {
+  text-decoration: none;
+  &:link:hover {
+    text-decoration: underline;
+  }
+}
