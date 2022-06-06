@@ -32,7 +32,7 @@
     - [Wordpress](https://wordpress.com/)
 
     Page Links:
-    - https://www.legalmatch.com/law-library/article/montana-criminal-laws.html
+    - [article](https://www.legalmatch.com/law-library/article/montana-criminal-laws.html)
         - Go to the lower part of the page you can see the author section.
         
 ## C. API endpoints #
