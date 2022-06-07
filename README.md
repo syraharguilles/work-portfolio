@@ -4,8 +4,8 @@
 - Created email template that can accepts API/JSON like structure data.
 
     Technologies Used:
-    - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML),
-    - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), 
+    - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+    - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
     - [Apache Velocity](https://velocity.apache.org/)
 
     UI:
