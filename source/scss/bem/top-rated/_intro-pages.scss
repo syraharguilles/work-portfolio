@@ -1,0 +1,132 @@
+.top-rated {
+    text-align: center;
+}
+
+.top-rated__attorney-location {
+    @include font-size(14px);
+
+    color: #747579;
+    margin-top: 10px;
+
+    &::before {
+        @include icon($fa-var-map-marker);
+
+        margin-right: 5px;
+    }
+}
+
+.top-rated__attorney-name {
+    @include font-size(20px);
+
+    margin: 23px 0 9px;
+}
+
+.top-rated__attorney-pic {
+    border-radius: 50%;
+    height: 120px;
+    overflow: hidden;
+    width: 120px;
+}
+
+.top-rated__cta {
+    display: inline-block;
+    margin-bottom: 11px;
+    margin-top: 25px;
+
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 56px;
+        margin-top: 59px;
+    }
+}
+
+.top-rated__header {
+    @include font-with-fallback(Gotham-Book, 28px);
+
+    line-height: 37px;
+    margin: 26px auto 10px;
+
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 16px;
+        margin-top: 62px;
+    }
+}
+
+.top-rated__img {
+    width: 100%;
+}
+
+.top-rated__item {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include media-breakpoint-up(sm) {
+        position: static;
+        visibility: visible !important;
+        width: auto;
+    }
+}
+
+.top-rated__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include media-breakpoint-up(sm) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 88%;
+    }
+}
+
+.top-rated__list-container {
+    margin-top: 42px;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 42px;
+    }
+}
+
+.top-rated__slider-dots {
+    margin-top: 17px;
+
+    @include media-breakpoint-up(sm) {
+        display: none;
+    }
+}
+
+.top-rated__sub-header {
+    @include font-size(15px);
+
+    display: inline-block;
+    line-height: 25px;
+
+    @include media-breakpoint-up(sm) {
+        width: 600px;
+    }
+}
+
+.top-rated__star-rating {
+    @include font-size(15px);
+}
+
+.top-rated__attorney-title {
+    @include font-size(15px);
+
+    color: #444;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.top-rated__info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    text-align: left;
+
+    @include media-breakpoint-only(sm) {
+        flex-basis: 125px;
+    }
+}

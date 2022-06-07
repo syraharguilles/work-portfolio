@@ -1,0 +1,62 @@
+.highly-rated
+    h2.highly-rated__h2.page__h2 Highly Rated Lawyers <span class="page__nowrap">at LegalMatch</span>
+    p.highly-rated__sub-head View Attorney profiles and see how other LegalMatch users rate attorneys that may respond to your case.
+
+    -
+        var list = [
+            {
+                img: '/bd/intro1-redesign/images/lawyer-5.png',
+                name: 'Deborah B.',
+                address: 'Lansing, MI',
+                category: 'Family Law',
+                rating: 4
+            },
+            {
+                img: '/bd/intro1-redesign/images/attorney-tate-young.jpg',
+                name: 'Tate Y.',
+                address: 'San Francisco, CA',
+                category: 'Employment & Labor Law',
+                rating: 5
+            },
+            {
+                img: '/bd/intro1-redesign/images/lawyer-3.png',
+                name: 'Mitchell M.',
+                address: 'Cherry Hill, NJ',
+                category: 'Family Law',
+                rating: 5
+            },
+            {
+                img: '/bd/intro1-redesign/images/lawyer-4.png',
+                name: 'Brigida R.',
+                address: 'Dallas, TX',
+                category: 'Famliy Law',
+                rating: 5
+            }
+        ];
+
+    ul.highly-rated__list
+        each item, index in list
+            li.highly-rated__list-item.js-highly-rated-item(
+                data-target="#highly-rated__item" + (index + 1)
+            )
+                .highly-rated__img
+                    img.page__img(src=item.img alt=item.name)
+                span.highly-rated__name= item.name
+                span.highly-rated__address= item.address
+                span.highly-rated__category= item.category
+
+                - var starRatingClass = "star-rating--" + item.rating + "-star";
+
+                span.highly-rated__rating.top-rated__star-rating.star-rating(
+                    class=starRatingClass
+                )
+
+    button.highly-rated__btn(
+        type='button'
+        data-has-lm-track-click-handler='true'
+        data-lm-click
+        data-lm-event-name=PLANEVENTNAME
+        data-lm-event-params='{"element":"Find a Great Lawyer"}'
+        data-toggle='modal'
+        data-target='.case-intake-modal'
+    ) Find a Great Lawyer

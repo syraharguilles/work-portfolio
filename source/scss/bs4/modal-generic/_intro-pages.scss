@@ -1,0 +1,25 @@
+.modal-generic__close {
+    @include font-with-fallback(Gotham-Book, 22px);
+
+    background: transparent;
+    border: 0;
+    color: #000;
+    cursor: pointer;
+    float: right;
+    font-weight: 700;
+    margin-top: -25px;
+    opacity: 0.2;
+    text-shadow: 0 1px 0 #fff;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+        outline: none;
+    }
+}
+
+.modal-generic__close--position-absolute {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

@@ -1,0 +1,18 @@
+/**
+ * components tagged with this class are hidden by default
+ * will be removed via javascript once page is loaded
+ */
+.js-disabled {
+  display: none !important;
+}
+
+/**
+ * this class is applied to the root <html> node
+ * needed to override some existing rules to display important elements even without JS
+ * will be removed via javascript once page is loaded
+ */
+.no-js {
+  .collapse {
+    display: block !important;
+  }
+}

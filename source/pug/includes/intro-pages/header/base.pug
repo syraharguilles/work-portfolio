@@ -1,0 +1,19 @@
+header.header
+    .container.header_wrapper
+        span.header__logo
+            img.header__logo-image(
+                src='/images/logo/md.svg'
+                alt='/images/logo/md.svg'
+                aria-label='LegalMatch Logo'
+            )
+
+        -
+            var list = [
+                'No fee to present <span class="page__nowrap">your case</span>',
+                'Choose from lawyers <span class="page__nowrap">in your area</span>',
+                '<span class="page__nowrap">A 100% confidential</span> service'
+            ];
+
+        ul.header__checklist
+            each item in list
+                li.header__checklist-item!= item

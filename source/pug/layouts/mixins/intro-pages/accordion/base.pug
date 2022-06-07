@@ -1,0 +1,54 @@
+mixin accordion(param)
+    if param
+    .page__subcat-content.subcat-content
+        - const MIDDLE_INDEX = Math.ceil(param.length / 2);
+        - const FIRST_HALF = param.splice(0, MIDDLE_INDEX);
+        - const SECOND_HALF = param.splice(-MIDDLE_INDEX);
+        .subcat-content__column
+            each first_half_item in FIRST_HALF
+                .subcat-content__item.collapse__container.js-collapse.js-collapse-group(
+                    itemtype='http://schema.org/Article'
+                )
+                    h3.subcat-content__header.js-collapse-toggle(
+                        itemprop='name'
+                    ) !{first_half_item.title}
+                    meta(
+                        itemprop='datePublished'
+                        content=first_half_item.datePublished
+                    )
+                    meta(itemprop='headline' content=first_half_item.headline)
+                    meta(
+                        itemprop='image'
+                        content='https://www.legalmatch.com/images/logo/lg.png'
+                    )
+                    meta(
+                        itemprop='articleSection'
+                        content=first_half_item.articleSection
+                    )
+                    div(itemprop='articleBody')
+                        each first_half_content_item in first_half_item.content
+                            p.subcat-content__content.js-subcat-content-disable-tab !{first_half_content_item}
+        .subcat-content__column
+            each second_half_item in SECOND_HALF
+                .subcat-content__item.collapse__container.js-collapse.js-collapse-group(
+                    itemtype='http://schema.org/Article'
+                )
+                    h3.subcat-content__header.js-collapse-toggle(
+                        itemprop='name'
+                    ) !{second_half_item.title}
+                    meta(
+                        itemprop='datePublished'
+                        content=second_half_item.datePublished
+                    )
+                    meta(itemprop='headline' content=second_half_item.headline)
+                    meta(
+                        itemprop='image'
+                        content='https://www.legalmatch.com/images/logo/lg.png'
+                    )
+                    meta(
+                        itemprop='articleSection'
+                        content=second_half_item.articleSection
+                    )
+                    div(itemprop='articleBody')
+                        each second_half_content_item in second_half_item.content
+                            p.subcat-content__content.js-subcat-content-disable-tab !{second_half_content_item}

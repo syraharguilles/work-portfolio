@@ -1,0 +1,44 @@
+@mixin service-menu-fluid-item-property($prop) {
+  @include poly-fluid-sizing($prop, (get-bp(xs): 15px, get-bp(sm): 5px, get-bp(md): 8px, get-bp(lg): 15px));
+}
+
+.service-menu {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.service-menu__item {
+  @include font-size(15px);
+  font-family: $font-family-sans-serif;
+  display: inline-block;
+  list-style: none;
+  &:not(:first-child) {
+    &:before {
+      @include icon($fa-var-circle, 8px);
+      @include service-menu-fluid-item-property('margin-right');
+      position: relative;
+      top: -2px;
+    }
+  }
+  &:nth-child(2) {
+    @include service-menu-fluid-item-property('padding-right');
+    @include service-menu-fluid-item-property('padding-left');
+  }
+  a, a:link {
+    color: #97a8a7;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include media-breakpoint-down(tn) {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    &:before {
+      display: none;
+    }
+  }
+}

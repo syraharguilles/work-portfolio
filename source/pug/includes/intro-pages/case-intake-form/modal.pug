@@ -1,0 +1,14 @@
+.modal.fade.case-intake-modal(tabindex='-1' role='dialog' aria-hidden='true')
+    .modal-dialog.modal-dialog--case-intake-modal.modal-lg.modal-dialog-centered(
+        role='document'
+    )
+        .modal-content.modal-content--case-intake-modal.modal-generic
+            .modal-body.modal-body--case-intake-modal
+                button.modal-generic__close.modal-generic__close--position-absolute(
+                    type='button'
+                    data-dismiss='modal'
+                    aria-label='Close'
+                )
+                    span(aria-hidden='true') X
+
+                include @lms/source/pug/includes/intro-pages/case-intake-form/general-category

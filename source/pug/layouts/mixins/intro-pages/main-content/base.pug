@@ -1,0 +1,15 @@
+mixin main_content(param)
+    if param
+        div(itemtype='http://schema.org/Article')
+            h2.page__h2.main-content__header(itemprop='name') !{param.title}
+            meta(itemprop='datePublished' content=param.datePublished)
+            meta(itemprop='headline' content=param.headline)
+            meta(
+                itemprop='image'
+                content='https://www.legalmatch.com/images/logo/lg.png'
+            )
+            meta(itemprop='url' content=param.url)
+            if param.content.length
+                div(itemprop='articleBody')
+                    each item in param.content
+                        p.page__p !{item}

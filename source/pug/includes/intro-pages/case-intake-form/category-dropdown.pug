@@ -1,0 +1,18 @@
+.case-intake-form__dropdown.dropdown.js-case-intake-category-container
+    button#category-dropdown.case-intake-form__input-button.dropdown-toggle.js-case-intake-category-input(
+        data-aut='ci_add-category-dropdown'
+        data-toggle='dropdown'
+        type='button'
+    ) Choose a Category
+    input.js-case-intake-form-supcatid(type='hidden' name='supCatIds')
+    .case-intake-form__dropdown-menu.dropdown-menu.js-case-intake-categories-dropdown.is-single-choice(
+        data-category=CATEGORY
+    )
+    p.case-intake-form__hint
+        | Can't find a category?
+        |
+        span.case-intake-form__hint-link.js-overlay-toggle-prefetch.js-other-category-modal-trigger(
+            data-toggle='modal'
+            data-target='.other-categories__modal'
+            data-aut='ci_otherCategories-link'
+        ) Click here

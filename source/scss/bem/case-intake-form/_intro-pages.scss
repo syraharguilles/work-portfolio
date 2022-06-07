@@ -1,0 +1,306 @@
+.case-intake-form__header {
+    @include font-with-fallback(Gotham-Book, 14px);
+
+    @include media-breakpoint-up(sm) {
+        @include font-size(20px);
+    }
+}
+
+.case-intake-form__general {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 14px 0 29px;
+    padding: 0;
+
+    @include media-breakpoint-up(sm) {
+        margin: 24px 0 29px;
+        width: 600px;
+    }
+}
+
+.case-intake-form__general-icon {
+    height: 17px;
+    margin-right: 17px;
+    width: 15px;
+}
+
+.case-intake-form__general-item {
+    padding: 6px 0;
+}
+
+.case-intake-form__general-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+        width: 50%;
+    }
+}
+
+.case-intake-form__location-component {
+    position: relative;
+}
+
+.case-intake-form__location-component.loader {
+    .case-intake-form__location-progress {
+        display: block;
+    }
+}
+
+.case-intake-form__location-component.invalid {
+    .case-intake-form__location-loader {
+        display: none;
+    }
+
+    .case-intake-form__location-progress {
+        display: block;
+    }
+
+    .case-intake-form__location-progress::before {
+        border: 2px solid #c00;
+        color: #c00;
+        content: "!";
+        display: block;
+    }
+}
+
+.case-intake-form__location-component.valid {
+    .case-intake-form__location-loader {
+        display: none;
+    }
+
+    .case-intake-form__location-progress {
+        display: block;
+    }
+
+    .case-intake-form__location-progress::before {
+        border: 2px solid #008000;
+        color: #008000;
+        content: "\2713";
+        display: block;
+    }
+}
+
+.case-intake-form__location-component .default-hide {
+    .case-intake-form__location-progress::before {
+        display: none;
+    }
+}
+
+.case-intake-form__location-input {
+    @include font-size(15px);
+
+    border: 1px solid #bdc1c6;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px 40px 15px 15px;
+    width: 500px;
+
+    @include media-breakpoint-down(ss) {
+        padding: 6px 40px 6px 15px;
+        width: 100%;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-ms-clear {
+        display: none;
+    }
+}
+
+.case-intake-form__location-progress {
+    bottom: 0;
+    display: none;
+    height: 18px;
+    left: 470px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+
+    @include media-breakpoint-down(ss) {
+        left: auto;
+        right: 12px;
+    }
+
+    &::before {
+        @include font-with-fallback(Gotham-Medium, 10px);
+
+        border-radius: 50%;
+        content: "";
+        display: none;
+        height: 18px;
+        text-align: center;
+        width: 18px;
+    }
+}
+
+.case-intake-form__lower-container {
+    display: block;
+
+    @include media-breakpoint-up(sm) {
+        display: flex;
+    }
+}
+
+.case-intake-form__not-listed {
+    @include media-breakpoint-down(ss) {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.case-intake-form__other-category {
+    align-self: center;
+    margin-bottom: 0;
+    text-align: center;
+
+    @include media-breakpoint-only(md) {
+        margin-bottom: 0;
+        text-align: left;
+        vertical-align: -10px;
+    }
+
+    @include media-breakpoint-up(sm) {
+        margin-left: 55px;
+        width: auto;
+    }
+}
+
+.case-intake-form__other-category-link {
+    background-color: transparent;
+    color: #337ab7;
+    cursor: pointer;
+    text-decoration: underline;
+
+    @include media-breakpoint-only(md) {
+        display: block;
+    }
+}
+
+.case-intake-form__req {
+    @include font-with-fallback(Gotham-Book, 14px);
+
+    color: #c00;
+
+    @include media-breakpoint-up(sm) {
+        @include font-size(20px);
+    }
+}
+
+.case-intake-form__subcat-checkbox,
+.case-intake-form__subcat-popup {
+    display: none;
+}
+
+.case-intake-form__subcat-checkbox:checked
+    + .case-intake-form__subcat-checkbox-label::before {
+    @include icon($fa-var-check-square);
+
+    color: #337ab7;
+    margin-right: 13px;
+}
+
+.case-intake-form__subcat-checkbox-label {
+    @include font-with-fallback(Gotham-Book, 15px);
+
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    margin: 0;
+    padding: 2px 0;
+
+    @include media-breakpoint-up(sm) {
+        @include font-size(16px);
+    }
+
+    &::before {
+        @include icon($fa-var-square-o, 20px);
+
+        color: #cccfd3;
+        margin-right: 14px;
+    }
+
+    &:hover {
+        color: #337ab7;
+    }
+
+    &:hover::before {
+        color: #6499c7;
+    }
+}
+
+.case-intake-form__subcat-item {
+    width: 100%;
+}
+
+.case-intake-form__subcat-item--flex {
+    @include media-breakpoint-up(sm) {
+        width: 50%;
+    }
+}
+
+.case-intake-form__subcat-list {
+    list-style: none;
+    margin: 14px 0 29px;
+    padding: 0;
+
+    @include media-breakpoint-up(sm) {
+        margin: 24px 0 29px;
+        width: 610px;
+    }
+}
+
+.case-intake-form__subcat-list--flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.case-intake-form__submit {
+    display: block;
+
+    @include media-breakpoint-up(sm) {
+        margin: 0;
+        width: 250px;
+    }
+
+    @include media-breakpoint-down(ss) {
+        margin-bottom: 10px;
+    }
+
+    &.pulsing {
+        animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+        box-shadow: 0 0 0 0 rgba(247, 182, 80, 1);
+        text-decoration: none !important;
+        transition: all 300ms ease-in-out;
+    }
+
+    /* Comment-out to have the button continue to pulse on mouseover */
+    &.pulsing:hover {
+        animation: none;
+        color: #fff;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.intro-category-form--v3 .case-intake-form__location-progress {
+    @media (max-width: 1199px) {
+        left: auto;
+        right: 8px;
+    }
+}
+
+/* Animation */
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);
+    }
+}

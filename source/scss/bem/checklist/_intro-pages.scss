@@ -1,0 +1,56 @@
+.checklist {
+    list-style: none;
+    margin: 0;
+    max-width: 833px;
+    padding: 12px 5px 14px;
+
+    @include media-breakpoint-down(xs) {
+        width: 290px;
+    }
+
+    @include media-breakpoint-up(ss) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        padding: 24px 0;
+    }
+
+    @include media-breakpoint-only(sm) {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: 33px;
+        padding-top: 33px;
+    }
+}
+
+.checklist--larger {
+    max-width: none;
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: 51px;
+        padding-top: 51px;
+    }
+}
+
+.checklist__item {
+    padding: 3px 10px 3px 29px;
+    position: relative;
+
+    @include media-breakpoint-only(sm) {
+        width: 33.33%;
+    }
+
+    &::before {
+        @include icon($fa-var-check);
+
+        color: #dd9d26;
+        font-size: 16px;
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+}

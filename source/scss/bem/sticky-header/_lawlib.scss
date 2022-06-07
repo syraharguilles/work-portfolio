@@ -1,0 +1,97 @@
+.sticky-header {
+    background-color: #fff;
+    border-bottom: 2px solid #909191;
+    box-shadow: 0 3px 9px rgba(71, 71, 71, 0.3);
+    display: none;
+    position: fixed;
+    top: 0;
+    transition: display 0.4s ease;
+    width: 100%;
+    z-index: 1000;
+  
+    &__body {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 5%;
+    
+      @include media-breakpoint-between(null, xs) {
+        display: block;
+        text-align: center;
+      }
+    }
+  
+    &__button {
+      position: relative;
+    
+      &-anchor {
+        @include font-with-fallback('Gotham-Medium');
+        @include poly-fluid-sizing('font-size', (get-bp(lg): 24px, get-bp(md): 16px, get-bp(md)-1: 16px));
+        @include poly-fluid-sizing('margin-top', (get-bp(lg): 16px, get-bp(md): 13px, get-bp(md)-1: 10px));
+        
+        background-color: #f7b650;
+        border-radius: 3px;
+        color: #232222;
+        display: block;
+        padding: 17px 38px 16px 22px;
+        position: relative;
+        text-decoration: none;
+    
+        @include media-breakpoint-up(md){
+          padding: 15px 45px 14px 20px;
+        }
+    
+        @include media-breakpoint-only(xs){
+          margin: 14px auto;
+          width: 290px;
+        }
+    
+        @include media-breakpoint-only(tn) {
+          margin: 14px auto;
+          width: 240px;
+        }
+    
+        &::after {
+          @include icon($fa-var-angle-right);
+          @include poly-fluid-sizing('font-size', (get-bp(lg): 24px, get-bp(md): 22px, get-bp(md)-1: 20px));
+          @include poly-fluid-sizing('line-height', (get-bp(lg): 24px, get-bp(md): 22px, get-bp(md)-1: 20px));
+          @include poly-fluid-sizing('top', (get-bp(lg): 20px, get-bp(md): 15px, get-bp(md)-1: 18px));
+          
+          font-weight: bold;
+          margin-left: 10px;
+          position: absolute;
+        }
+    
+        &:hover {
+          color: #232222;
+          text-decoration: none;
+        }
+    
+      }
+    
+    }
+  
+    &__text {
+      @include font-with-fallback('Gotham-Medium');
+      @include poly-fluid-sizing('font-size', (get-bp(lg): 30px, get-bp(md): 22px, get-bp(md)-1: 18px));
+      @include poly-fluid-sizing('line-height', (get-bp(lg): 30px, get-bp(md): 22px, get-bp(md)-1: 18px));
+      @include poly-fluid-sizing('padding-top', (get-bp(lg): 32px, get-bp(md): 30px, get-bp(md)-1: 28px));
+      @include poly-fluid-sizing('padding-bottom', (get-bp(lg): 32px, get-bp(md): 30px, get-bp(md)-1: 28px));
+    
+      color: #232222;
+      font-weight: normal;
+      line-height: 24px;
+    
+      @include media-breakpoint-between(null, xs) {
+        display: none;
+      }
+    }
+  
+    &--blue{
+      background-color: #689acb;
+      border: 0;
+  
+      &-text{
+        color: #fff;
+      }
+    }
+  }

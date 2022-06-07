@@ -1,0 +1,21 @@
+form.js-case-intake-form-category-content
+    input.js-supcat-ids(type='hidden' name='supCatIds' value='')
+    input.js-ai-value(type='hidden' name='ai' value=AI)
+    .modal-subcategory
+        .modal-subcategory__header(data-aut='ci_choosenCat')
+            | Most Common
+            |
+            span.js-supcat-title
+            |
+            | Issues:
+
+        .modal-subcategory__content.js-subcat-content
+
+        .text-center
+            a.modal-subcategory__submit.js-subcategory-submit(
+                href='#'
+                data-lm-click
+                data-lm-event-name=PLANEVENTNAME
+                data-lm-event-params='{"element": "CTA Modal"}'
+                data-aut='ci_submit-btn-modal'
+            ) Find a Lawyer

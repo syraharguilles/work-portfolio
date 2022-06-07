@@ -1,0 +1,75 @@
+mixin highly_rated(tracker, sup_id, sup_cat_ids, variant_no)
+    if tracker && (sup_id || sup_skip) && sup_cat_ids
+    .page__top-rated.top-rated
+        h2.page__h2.top-rated__header Highly Rated Lawyers <span class"page__nowrap">at LegalMatch</span>
+        span.top-rated__sub-header View attorney profiles and see how other LegalMatch users rate attorneys that may respond to your case.
+        .top-rated__list-container
+            ul.top-rated__list.js-top-rated-slider
+                li.top-rated__item(
+                    itemscope
+                    itemtype='http://www.schema.org/Person'
+                    style='order:1;'
+                )
+                    .top-rated__attorney-pic
+                        img.top-rated__img(
+                            itemprop='image'
+                            data-src='/bd/intro1-redesign/images/attorney-tate-young.jpg'
+                            alt='LegalMatch Employment and Labor Lawyer Tate Y.'
+                        )
+                    span.top-rated__attorney-name(itemprop='name') Tate Y
+                    span.top-rated__star-rating.star-rating.star-rating--five-star
+                    span.top-rated__attorney-location(itemprop='address') San Francisco, CA
+                    span(meta itemprop='jobTitle' content='Lawyer')
+                li.top-rated__item(
+                    itemscope
+                    itemtype='http://www.schema.org/Person'
+                    style='order:2;'
+                )
+                    .top-rated__attorney-pic 
+                        img.top-rated__img(
+                            itemprop='image'
+                            data-src='/img_common/landing-page/atty/mitchell-m.jpg'
+                            alt='LegalMatch Family Attorney Mitchell M.'
+                        )
+                    span.top-rated__attorney-name(itemprop='name') Mitchell M
+                    span.top-rated__star-rating.star-rating.star-rating--five-star
+                    span.top-rated__attorney-location(itemprop='address') Cherry Hill, NJ
+                    span(meta itemprop='jobTitle' content='Lawyer')
+                li.top-rated__item(
+                    itemscope
+                    itemtype='http://www.schema.org/Person'
+                    style='order:3;'
+                )
+                    .top-rated__attorney-pic
+                        img.top-rated__img(
+                            itemprop='image'
+                            data-src='/img_common/landing-page/atty/bridgida-r_100x100.jpg'
+                            alt='LegalMatch Family Law Attorney Brigida R.'
+                        )
+                    span.top-rated__attorney-name(itemprop='name') Brigida R
+                    span.top-rated__star-rating.star-rating.star-rating--four-half-star
+                    span.top-rated__attorney-location(itemprop='address') Dallas, TX
+                    span(meta itemprop='jobTitle' content='Lawyer')
+                li.top-rated__item(
+                    itemscope
+                    itemtype='http://www.schema.org/Person'
+                    style='order:4;'
+                )
+                    .top-rated__attorney-pic
+                        img.top-rated__img(
+                            itemprop='image'
+                            src='/img_common/landing-page/atty/shazam-k_100x100.jpg'
+                            alt='LegalMatch Criminal Lawyer Shazam K.'
+                        )
+                    span.top-rated__attorney-name(itemprop='name') Shazam K
+                    span.top-rated__star-rating.star-rating.star-rating--five-star
+                    span.top-rated__attorney-location(itemprop='address') Denver, CO
+                    span(meta itemprop='jobTitle' content='Lawyer')
+            .top-rated__slider-dots.js-top-rated-dots
+            a.top-rated__cta.page__button(
+                href="/link.php?ar=/home/start.do&catBypass=true&ai=" + tracker.ai + "&supCatIds=" + sup_cat_ids
+                data-lm-click
+                data-lm-event-name=tracker.dataLmEventName + variant_no
+                data-lm-event-params='{"element": "CTA (bottom)"}'
+                data-lm-track-category="Sup_Cat-" + sup_cat_ids
+            ) Find A Lawyer Now

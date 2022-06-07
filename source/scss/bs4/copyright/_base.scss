@@ -1,0 +1,67 @@
+.copyright {
+    @include font-with-fallback($font-family-sans-serif, 12px);
+
+    margin: 0 auto;
+    max-width: 350px;
+    padding-bottom: 45px;
+    padding-top: 45px;
+    text-align: center;
+
+    @include media-breakpoint-down(xs) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.copyright.is-ca-page {
+    padding-top: 20px;
+}
+
+.copyright-california {
+    @include font-size(12px);
+
+    line-height: 18px;
+    padding-top: 20px;
+    text-align: center;
+
+    @include media-breakpoint-down(ss) {
+        display: none;
+    }
+
+    br {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+    }
+}
+
+.copyright-california--mobile {
+    display: none;
+
+    @include media-breakpoint-down(ss) {
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.copyright-desktop {
+    display: block;
+
+    @include media-breakpoint-down(ss) {
+        display: none;
+    }
+}
+
+.copyright-mobile {
+    display: none;
+
+    @include media-breakpoint-down(ss) {
+        display: block;
+        max-width: none;
+        padding-top: 20px;
+        width: 100%;
+    }
+}

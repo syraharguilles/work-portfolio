@@ -1,0 +1,47 @@
+.header {
+    background: #fff;
+    position: relative;
+
+    &::after {
+        background: transparent;
+        bottom: -20px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 7px 7px -7px inset;
+        content: "";
+        display: block;
+        height: 20px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 5;
+    }
+}
+
+.header__logo {
+    display: flex;
+    max-width: 155px;
+
+    @include media-breakpoint-down(tn) {
+        margin-left: 10px;
+    }
+
+    @include media-breakpoint-up(sm) {
+        max-width: 196px;
+    }
+}
+
+.header__logo-image {
+    height: 49px;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+        height: 70px;
+    }
+}
+
+.header__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}

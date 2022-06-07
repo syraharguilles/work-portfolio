@@ -1,0 +1,31 @@
+block config
+html&attributes(HTML)
+    head
+        block meta:default
+            meta(charset='utf-8')
+            meta(http-equiv='X-UA-Compatible' content='IE=edge')
+            meta(name='viewport' content='width=device-width, initial-scale=1')
+
+        block meta
+
+        title #{TITLE}
+
+        block head:default
+            include @lms/ssi/universal-include-head.inc
+
+        block head
+
+    body&attributes(BODY)
+        block header:default
+            include @lms/ssi/google-tag-manager-body.inc
+
+        block header
+
+        block content
+
+        block footer
+
+        block foot:default
+            include @lms/ssi/universal-include.inc
+
+        block foot

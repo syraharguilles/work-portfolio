@@ -1,0 +1,21 @@
+.hero {
+    background: #f9f9f9;
+    overflow: auto;
+
+    @include media-breakpoint-down(ss) {
+        padding-bottom: 21px;
+    }
+
+    @include media-breakpoint-up(md) {
+        background: #f9f9f9 url("/images/intro-pages/intro-pages-hero-bg.jpg")
+            no-repeat right top;
+        height: 640px;
+        padding-left: 70px;
+    }
+}
+
+.hero--subcategory {
+    @include media-breakpoint-up(sm) {
+        height: 500px !important;
+    }
+}

@@ -1,0 +1,65 @@
+.intro-category-form .autocomplete-suggestions {
+    background: #fff;
+    border-top: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    margin: 0;
+    overflow: auto;
+}
+
+.intro-category-form .autocomplete-suggestion {
+    cursor: pointer;
+    padding: 2px 5px;
+
+    &:hover {
+        background: #ddebf8;
+    }
+}
+
+.intro2.intro-category-form--v .autocomplete-suggestions,
+.intro3.intro-category-form--v1 .autocomplete-suggestions,
+.intro6.intro-category-form--v1 .autocomplete-suggestions,
+.intro9.intro-category-form--v1 .autocomplete-suggestions {
+    background: #fff;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 3px 3px 3px #eee;
+    overflow: auto;
+}
+
+.intro2.intro-category-form--v .autocomplete-suggestion,
+.intro3.intro-category-form--v1 .autocomplete-suggestion,
+.intro6.intro-category-form--v1 .autocomplete-suggestion,
+.intro9.intro-category-form--v1 .autocomplete-suggestion {
+    border: 0;
+    padding: 2px 5px;
+}
+
+.intro2.intro-category-form--v2 .autocomplete-suggestions,
+.intro-category-form--v3 .autocomplete-suggestions {
+    box-shadow: none;
+}
+
+.intro2-v1 .autocomplete-suggestion,
+.intro-category-form--v2 .autocomplete-suggestion,
+.intro-category-form--v3 .autocomplete-suggestion {
+    padding: 9px;
+}
+
+.intro2.intro-category-form--v .autocomplete-group {
+    font-weight: bold;
+    padding: 2px;
+}
+
+.intro2.intro-category-form--v .autocomplete-suggestion {
+    padding-left: 10px;
+}
+
+.intro-category-form--v3 .autocomplete-group {
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    padding: 9px 9px 9px 4px;
+}
+
+.intro-category-form--v3 .autocomplete-suggestion {
+    padding-left: 15px;
+}

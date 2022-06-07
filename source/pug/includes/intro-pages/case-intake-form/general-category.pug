@@ -1,0 +1,105 @@
+-
+    var list = [
+        {
+            icon: '/images/find/family.svg',
+            label: 'Family Lawyers',
+            value: 287,
+        },
+        {
+            icon: '/images/find/employment.svg',
+            label: 'Employment Lawyers',
+            value: 293,
+        },
+        {
+            icon: '/images/find/criminal.svg',
+            label: 'Criminal Defense Lawyers',
+            value: 286,
+        },
+        {
+            icon: '/images/find/real-estate.svg',
+            label: 'Real Estate Lawyers',
+            value: 295,
+        },
+        {
+            icon: '/images/find/business.svg',
+            label: 'Business Lawyers',
+            value: 285,
+        },
+        {
+            icon: '/images/find/immigration.svg',
+            label: 'Immigration Lawyers',
+            value: 290,
+        },
+        {
+            icon: '/images/find/personal-injury.svg',
+            label: 'Personal Injury Lawyers',
+            value: 291,
+        },
+        {
+            icon: '/images/find/wills-trusts-estates.svg',
+            label: 'Wills, Trusts & Estates Lawyers',
+            value: 64,
+        },
+        {
+            icon: '/images/find/bankruptcy-finances.svg',
+            label: 'Bankruptcy & Finances Lawyers',
+            value: 288,
+        },
+        {
+            icon: '/images/find/government.svg',
+            label: 'Government Lawyers',
+            value: 289,
+        },
+        {
+            icon: '/images/find/products-services.svg',
+            label: 'Products & Services Lawyers',
+            value: 294,
+        },
+        {
+            icon: '/images/find/intellectual-property.svg',
+            label: 'Intellectual Property Lawyers',
+            value: 292,
+        }
+    ];
+
+.case-intake-form__general
+    .case-intake-form__general-location
+        .case-intake-form__general-header Enter City or ZIP:
+        .case-intake-form__location-field
+            .case-intake-form__location-checker.case-intake-form__location-container.js-case-intake-form-location-checker.js-case-intake-form__location
+                form.js-case-intake-form-location-field
+                    input.case-intake-form__location-input.js-case-intake-location-input(
+                        type='text'
+                        value=''
+                        aria-label='Zip Code or City Input Field'
+                        data-menu-class-name='js-menu-location--1'
+                        autocomplete='off'
+                    )
+            .case-intake-form__location-hint this may not be the same place you live
+    .case-intake-form__general-header Choose a Legal Category:
+    .case-intake-form__general-body
+        ul.case-intake-form__general-list
+            each item in list
+                li.case-intake-form__general-item
+                    a.case-intake-form__general-link.js-supcat(
+                        href='#'
+                        data-value=item.value
+                        data-ai=AI
+                        data-target='.js-modal-subcategory'
+                        data-toggle='modal'
+                        data-aut='ci_add-category-list'
+                    )
+                        img.case-intake-form__general-icon(
+                            src=item.icon
+                            inline
+                        )
+                        |
+                        | #{item.label}
+    p.case-intake-form__other-category
+        | Can't find a category?
+        |
+        span.case-intake-form__other-category-link(
+            data-toggle='modal'
+            data-target='.other-categories__modal'
+            data-aut='ci_otherCategories-link'
+        ) Click Here

@@ -1,0 +1,75 @@
+- var year = new Date().getFullYear();
+
+footer.footer.container
+    .row.justify-content-center
+        .col-sm-3.col-ss-12
+            if DISABLELOGOLINK
+                span.logo__link.logo__link--svg-footer(
+                    aria-label='LegalMatch Logo'
+                )
+            else
+                a.logo__link.logo__link--svg-footer(
+                    href='/'
+                    role='link'
+                    aria-label='LegalMatch Logo'
+                )
+
+        .col-sm-6.col-ss-12
+            -
+                var list = [
+                    {
+                        link: '/company/user_agreement.html',
+                        label: 'User Agreement'
+                    },
+                    {
+                        link: '/company/privacy_statement.html',
+                        label: 'Privacy Policy'
+                    },
+                    {
+                        link: '/sitemap.html',
+                        label: 'Site Map'
+                    },
+                ];
+
+            ul.service-menu
+                each item in list
+                    li.service-menu__item
+                        a.js-modal-iframe-toggle(
+                            href=item.link
+                            data-toggle='modal'
+                            data-target='#modal-iframe'
+                        )= item.label
+
+            ul.service-menu.mt-4
+                li.service-menu__item
+                    a(
+                        href='https://www.legalmatchcareers.com/'
+                        title='LegalMatch Careers'
+                        target='_blank'
+                    ) LegalMatch Careers
+
+            .copyright.copyright-desktop Copyright 1999-#{year} LegalMatch. All rights reserved.
+
+        .col-sm-3.col-ss-12
+            .trust-icons
+                .trust-icons__truste
+                    div
+                        a(
+                            href='//privacy.truste.com/privacy-seal/validation?rid=e5840f6c-4417-46a7-a71d-ebe13bcf17b7'
+                            target='_blank'
+                        )
+                            img(
+                                style='border: none'
+                                src='//privacy-policy.truste.com/privacy-seal/seal?rid=e5840f6c-4417-46a7-a71d-ebe13bcf17b7'
+                                alt='TRUSTe'
+                            )
+
+                a.trust-icons__bbb(
+                    href='http://www.bbb.org/greater-san-francisco/business-reviews/attorneys-referral-service/legalmatch-in-south-san-francisco-ca-47260'
+                    rel='noopener'
+                    target='_blank'
+                    role='link'
+                    aria-label='BBB Logo'
+                )
+
+        .copyright.copyright-mobile Copyright 1999-#{year} LegalMatch. All rights reserved.

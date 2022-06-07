@@ -1,0 +1,120 @@
+.intro-category-form--v1 .case-intake-form__other-category {
+    @include media-breakpoint-down(sm) {
+        margin-top: 20px;
+    }
+}
+
+.cif-intro2-var2 .case-intake-form__header {
+    color: #fff;
+
+    @include media-breakpoint-down(xs) {
+        @include font-size(14px);
+    }
+}
+
+.cif-intro2-var2 .case-intake-form__req,
+.cif-intro2-var2 .case-intake-form__other-category-link {
+    color: #f7b650;
+}
+
+.cif-intro2-var2 .case-intake-form__location-input {
+    width: 100%;
+}
+
+.cif-intro2-var2 .case-intake-form__location-component {
+    margin-bottom: 15px;
+}
+
+.cif-intro2-var2 .case-intake-form__subcat-list {
+    width: auto;
+
+    @include media-breakpoint-down(xs) {
+        margin: 10px 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+    }
+
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+}
+
+.cif-intro2-var2 .case-intake-form__subcat-item--flex {
+    padding-bottom: 15px;
+    padding-right: 10px;
+
+    @include media-breakpoint-up(lg) {
+        width: 50%;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 100%;
+    }
+}
+
+.cif-intro2-var2 .case-intake-form__subcat-checkbox-label {
+    @include font-size(15px);
+
+    align-items: flex-start;
+    padding: 0;
+
+    @include media-breakpoint-down(xs) {
+        @include font-size(14px);
+    }
+}
+
+.cif-intro2-var2 .case-intake-form__subcat-checkbox-label:hover {
+    color: #f7b54f;
+
+    &::before {
+        color: #f7b54f;
+    }
+}
+
+.cif-intro2-var2 .case-intake-form__subcat-checkbox-label::before {
+    line-height: 20px;
+}
+
+.cif-intro2-var2 .case-intake-form__other-category {
+    margin: 0;
+    order: 1;
+}
+
+.cif-intro2-var2 .case-intake-form__other-category-link {
+    display: inline;
+}
+
+.cif-intro2-var2 .case-intake-form__submit {
+    background: #f7b650;
+    color: #553e19;
+    margin: 0;
+    order: 2;
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 15px;
+        margin-right: 15px;
+    }
+
+    &:hover {
+        background: #f4ae40;
+        color: #553e19;
+    }
+}
+
+.case-intake-form__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(md) {
+        display: block;
+    }
+}
+
+.cif-intro2-var2
+    .case-intake-form__subcat-checkbox:checked
+    + .case-intake-form__subcat-checkbox-label::before {
+    color: #f7b54f;
+}

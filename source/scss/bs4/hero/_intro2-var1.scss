@@ -1,0 +1,111 @@
+.hero.hero__intro-variant {
+    background: none #02397b;
+    height: auto;
+    overflow: visible;
+    padding: 41px 35px 41px 47px;
+
+    @include media-breakpoint-down(ss) {
+        padding: 20px 0;
+    }
+
+    @include media-breakpoint-down(tn) {
+        padding: 20px 10px;
+    }
+}
+
+.hero__container {
+    align-items: center;
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(sm) {
+        display: flex;
+    }
+}
+
+.hero__header {
+    @include font-with-fallback("Gotham-Medium", 18px);
+
+    color: #fff;
+    font-weight: normal;
+    line-height: 26px;
+    margin-bottom: 0;
+    text-align: left;
+
+    @include media-breakpoint-up(ss) {
+        @include font-with-fallback("Gotham-Book", 34px);
+
+        line-height: 50px;
+        margin-bottom: 10px;
+    }
+
+    @include media-breakpoint-down(ss) {
+        text-align: center;
+    }
+
+    @include media-breakpoint-down(tn) {
+        text-align: left;
+    }
+}
+
+.intro6.intro-category-form--v2 .hero__header br {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+.hero__left {
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        width: 66%;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 60%;
+    }
+
+    @include media-breakpoint-up(sm) {
+        width: 50%;
+    }
+}
+
+.hero__right {
+    margin: 0 auto;
+    width: 380px;
+
+    @include media-breakpoint-up(lg) {
+        width: 34%;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 40%;
+    }
+
+    @include media-breakpoint-up(sm) {
+        width: 50%;
+    }
+
+    @include media-breakpoint-down(tn) {
+        width: 100%;
+    }
+}
+
+.hero__p {
+    @include font-with-fallback("Gotham-Book", 18px);
+
+    color: #fff;
+
+    @include media-breakpoint-up(ss) {
+        @include font-size(22px);
+    }
+
+    @include media-breakpoint-down(ss) {
+        text-align: center;
+    }
+
+    @include media-breakpoint-down(tn) {
+        text-align: left;
+    }
+}

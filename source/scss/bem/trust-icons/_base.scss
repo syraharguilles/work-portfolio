@@ -1,0 +1,52 @@
+.trust-icons {
+    text-align: center;
+}
+
+.trust-icons__bbb {
+    @include size(150px, 68px);
+
+    background: url("//seal-goldengate.bbb.org/logo/ruhzbum/legalmatch-47260.png")
+        no-repeat 0 0;
+    display: block;
+    margin: 0 auto 10px;
+
+    &:hover {
+        background-position-x: -150px;
+        background-position-y: 0;
+    }
+}
+
+.trust-icons__bbb-link {
+    @include size(150px, 68px);
+
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 10px;
+
+    &:hover {
+        background-position-x: -150px;
+        background-position-y: 0;
+    }
+}
+
+.trust-icons__truste {
+    @include size(145px, 45px);
+
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.trust-icons__truste-link {
+    @include size(145px, 45px);
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.trust-icons__truste img,
+.trust-icons__truste-link img {
+    width: 145px;
+}

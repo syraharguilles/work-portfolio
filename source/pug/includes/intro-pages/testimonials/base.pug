@@ -1,0 +1,57 @@
+.testimonials
+    h2.testimonials__h2.page__h2 What People Are Saying About LegalMatch
+    .testimonials__trust-pilot-logo
+        img.page__img(src='/images/trust-pilot-logo-md.jpg' alt='Trust Pilot')
+
+    -
+        var list = [
+            {
+                testimonial: "I needed assistance with some legal matters and didn't know where to go. I found LegalMatch and decided to give it a try. Instantly after filling out their questionnaire, I started receiving calls from the exact lawyers I needed for my legal matters.",
+                name: 'Diane',
+                location: 'United States',
+                rating: 5
+            },
+            {
+                testimonial: "LegalMatch is especially helpful in that it allows fee structures to be clearly understood up-front, so there are no surprises to either party when a client comes in.",
+                name: 'Alan G.',
+                location: 'New York',
+                rating: 5
+            },
+            {
+                testimonial: "Great site for professional help regarding legal matters. I found this site to be very helpful in getting the questions and answers I needed to move forward with my case. I got several calls from different lawyers and was very satisfied with the information I received. Thank you Legalmatch for the help.",
+                name: 'Julian',
+                location: 'United States',
+                rating: 5
+            },
+            {
+                testimonial: "I found the LegalMatch process to be efficient and easy. I received qualified attorney responses right away and was offered free consultations by each attorney. I was able to select a great lawyer by the end of the same day I posted my question. I would highly recommend LegalMatch to those who are looking for a good lawyer for their own case.",
+                name: 'Marisa B.',
+                location: 'United States',
+                rating: 5
+            },
+            {
+                testimonial: "Answered some simple questions about my need for lawyer representation, and was matched with several in just minutes. Great way to find the Lawyer you’re looking for!",
+                name: 'Robert C.',
+                location: 'United States',
+                rating: 5
+            }
+        ];
+
+    .testimonials__wrapper-list
+        ul.testimonials__list.js-testimonial-slider
+            each item in list
+                li.testimonials__list-item
+                    .testimonials__wrapper-list-item
+                        p.testimonials__testimonial= '"' + item.testimonial + '"'
+
+                        - var starRatingClass = "star-rating--" + item.rating + "-star";
+
+                        span.testimonials__rating.top-rated__star-rating.star-rating(
+                            class=starRatingClass
+                        )
+                        hr.testimonials__hr
+                        span.testimonials__reviewer= item.name + ", " + item.location
+        .testimonials__slider-prev.js-testimonial-prev
+        .testimonials__slider-next.js-testimonial-next
+
+    .testimonials__slider-dots.js-testimonial-dots

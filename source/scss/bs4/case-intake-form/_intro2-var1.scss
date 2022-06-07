@@ -1,0 +1,220 @@
+$c-case-intake-form-radius: 5px;
+
+.case-intake-form {
+    @include font-with-fallback(Gotham-Book);
+
+    position: relative;
+}
+
+.case-intake-form__form {
+    background: #fff;
+    border-color: #dcdada;
+    border-radius: $c-case-intake-form-radius;
+    border-style: solid;
+    border-width: 1px;
+    padding: 30px 30px 20px;
+    width: 100%;
+
+    @include media-breakpoint-down(xs) {
+        padding: 20px;
+    }
+}
+
+.case-intake-form__field {
+    position: relative;
+}
+
+.case-intake-form__header {
+    @include font-size(14px);
+
+    color: #232222;
+    font-weight: normal;
+    line-height: 1.3em;
+    margin: 0 auto 20px;
+    text-align: center;
+
+    @include media-breakpoint-up(xs) {
+        @include font-size(18px);
+    }
+}
+
+.case-intake-form__input {
+    @include font-size(14px);
+
+    border: 1px solid #b2b3b3;
+    border-radius: $c-case-intake-form-radius;
+    color: #232222;
+    outline: none;
+    padding: 15px;
+    width: 100%;
+}
+
+.case-intake-form__input--error {
+    border: 1px #d21317 solid;
+
+    &:focus {
+        outline: none;
+        outline-offset: 0;
+    }
+}
+
+.case-intake-form__input-category {
+    &:focus {
+        outline: none;
+    }
+}
+
+.case-intake-form__input-location {
+    padding-left: 40px;
+    padding-right: 30px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.case-intake-form__location-checker {
+    @include media-breakpoint-down(sm) {
+        margin: 0 auto;
+    }
+
+    &::after {
+        @include font-with-fallback(Gotham-Medium, 16px);
+
+        content: url("/images/ram/loading.gif");
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        top: 30%;
+        transform: translateY(-50%);
+        visibility: hidden;
+        z-index: 10;
+
+        @include media-breakpoint-down(md) {
+            top: 35%;
+        }
+    }
+}
+
+.case-intake-form__location-checker--default {
+    &::after {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.case-intake-form__location-checker--invalid {
+    position: relative;
+
+    &::after {
+        border: 2px solid red;
+        border-radius: 50%;
+        box-sizing: content-box !important;
+        color: red;
+        content: "!";
+        height: 20px;
+        opacity: 1;
+        right: 7px;
+        visibility: visible;
+        width: 20px;
+    }
+}
+
+.case-intake-form__location-checker--loader {
+    position: relative;
+
+    &::after {
+        opacity: 1;
+        right: 7px;
+        top: 38%;
+        visibility: visible;
+        z-index: 0;
+    }
+}
+
+.case-intake-form__location-checker--valid {
+    position: relative;
+
+    &::after {
+        border: 2px solid #008000;
+        border-radius: 50%;
+        box-sizing: content-box !important;
+        color: #008000;
+        content: "\2713 ";
+        height: 20px;
+        opacity: 1;
+        right: 7px;
+        visibility: visible;
+        width: 20px;
+    }
+}
+
+.case-intake-form__hint {
+    @include font-size(11px);
+
+    color: #232222;
+    margin-top: 8px;
+}
+
+.case-intake-form__hint-link {
+    background: none;
+    border: 0;
+    color: #337ab7;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+}
+
+.case-intake-form__location-icon {
+    background-color: #fff;
+    background-image: url("/images/find/map.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 20px;
+    left: 15px;
+    position: absolute;
+    top: 14px;
+    width: 14px;
+}
+
+.case-intake-form__set-block {
+    display: block;
+}
+
+.case-intake-form__submit {
+    @include font-with-fallback("Gotham-Medium", 15px);
+
+    background: #f7b650;
+    border: 0;
+    border-radius: $c-case-intake-form-radius;
+    color: #553e19;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    padding: 19px;
+    text-align: center;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background: #f4ae40;
+    }
+}
+
+.intro-category-form--v1:not(.intro2) .case-intake-form__submit {
+    background: #02397b;
+    border-radius: 2px;
+    color: #fff;
+
+    &:hover {
+        background: #044696;
+    }
+}
+
+.case-intake-form__intro2-var1 .case-intake-form__submit {
+    margin-bottom: 0;
+    width: 100%;
+}

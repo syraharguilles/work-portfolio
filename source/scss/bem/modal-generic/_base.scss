@@ -1,0 +1,21 @@
+.modal-generic__close {
+	@include font-with-fallback(montserrat-regular);
+
+  background: transparent;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  float: right;
+	font-size: 21px;
+  font-weight: 700;
+  margin-top: 0;
+  opacity: .2;
+  padding-right: 0;
+  text-shadow: 0 1px 0 #fff;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    outline: none;
+  }
+}

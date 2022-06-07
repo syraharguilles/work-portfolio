@@ -1,0 +1,24 @@
+.footer {
+  color: #97a0a7;
+  padding-top: 30px;
+}
+
+.footer__logo .logo__link--svg-after{
+  height: 52px;
+
+  &:after{
+    height: 52px;
+  }
+}
+
+@include media-breakpoint-down(ss) {
+  .footer__logo .logo__tagline {
+    text-align: center;
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  .footer__logo .logo__tagline {
+    @include font-size(12px);
+  }
+}

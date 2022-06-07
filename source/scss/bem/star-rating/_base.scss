@@ -1,0 +1,82 @@
+.star-rating {
+    font-size: 13px;
+    margin-right: 5px;
+
+    &::before {
+        color: #fc9835;
+    }
+
+    &::after {
+        color: #bdc1c6;
+    }
+}
+
+.star-rating--five-star,
+.star-rating--5-star {
+    &::before {
+        @include icon("\f005  \f005  \f005  \f005  \f005");
+    }
+}
+
+.star-rating--four-half-star {
+    &::before {
+        @include icon("\f005  \f005  \f005  \f005  ");
+    }
+
+    &::after {
+        @include icon("\f123");
+
+        color: #fc9835;
+    }
+}
+
+.star-rating--four-star,
+.star-rating--4-star {
+    &::before {
+        @include icon("\f005  \f005  \f005  \f005  ");
+    }
+
+    &::after {
+        @include icon("\f005");
+    }
+}
+
+.star-rating--three-star,
+.star-rating--3-star {
+    &::before {
+        @include icon("\f005  \f005  \f005  ");
+    }
+
+    &::after {
+        @include icon("\f005  \f005");
+    }
+}
+
+.star-rating--two-star,
+.star-rating--2-star {
+    &::before {
+        @include icon("\f005  \f005  ");
+    }
+
+    &::after {
+        @include icon("\f005  \f005  \f005");
+    }
+}
+
+.star-rating--one-star,
+.star-rating--1-star {
+    &::before {
+        @include icon("\f005  ");
+    }
+
+    &::after {
+        @include icon("\f005  \f005  \f005  \f005");
+    }
+}
+
+.star-rating--0-star,
+.star-rating--zero-star {
+    &::after {
+        @include icon("\f005  \f005  \f005  \f005  \f005");
+    }
+}

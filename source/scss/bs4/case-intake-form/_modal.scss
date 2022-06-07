@@ -1,0 +1,98 @@
+.case-intake-form__modal {
+  height: 100%;
+  left: 0;
+  max-height: 380px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &.hide {
+    display: block !important;
+    visibility: hidden;
+  }
+
+  &-container {
+    background: #FFF;
+    border-radius: 5px;
+    border-top: 2px solid #d10f17;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: auto;
+    max-height: 180px;
+    max-width: 320px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 85%;
+	  z-index:10;
+  }
+
+  &-generic__close {
+    @include font-with-fallback(Gotham-Book, 21px);
+    font-weight: normal;
+  }
+
+  &-icon {
+    color: #d21317;
+    display: block;
+    font-size: 36px;
+    margin: 30px auto 0;
+    text-align: center;
+    width: 80%;
+  }
+
+  &-overlay {
+    background: #232222;
+    height: inherit;
+    opacity: 0.4;
+    padding: 30px;
+  }
+
+  &-subtitle {
+    @include font-with-fallback(Gotham-Book, 14px);
+    
+    font-weight: normal;
+    line-height: 1.5em;
+    margin: 1.5em auto;
+    max-width: 260px;
+    text-align: center;
+    width: 100%;
+  }
+  &-zip{
+    &-container{
+      border-top: none;
+      max-height: 140px;
+
+      @include media-breakpoint-down(sm) {
+        max-width: 250px;
+        width: 100%;
+      }
+    }
+    
+    &-icon{
+      margin-top: 0px;
+      @include media-breakpoint-down(sm) {
+        margin-top: 0px;
+      }
+      &:before{
+        content: url("/images/ram/loading.gif");
+        height: 20px;
+        position: relative;
+        top: 0px;
+        width: 20px;
+      }
+      &-timeout{
+        margin-top: 10px;
+        @include media-breakpoint-down(sm) {
+          margin-top: 10px;
+        }
+        &::before{
+          content: '\f06a';
+          font-family: FontAwesome;
+        }
+      }
+    }
+  }
+}

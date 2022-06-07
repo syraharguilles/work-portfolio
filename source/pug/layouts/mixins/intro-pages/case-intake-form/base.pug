@@ -1,0 +1,50 @@
+mixin case_intake_form(tracker, sup_id, sup_cat_ids, sup_skip, variant_no)
+    if tracker && (sup_id || sup_skip) && sup_cat_ids
+    - const SUP_SKIP = sup_skip !== 0 ? sup_skip.join(",") : sup_skip;
+    form#locForm.case-intake-form(
+        action='/link.php'
+        name='locForm'
+        method='get'
+        data-lm-track-category-form
+    )
+        #locationLp
+            span.case-intake-form__header Where Do You Need a Lawyer?
+            input(type='hidden' name='ar' value='/home/start.do')
+            input(type='hidden' name='ai' value=tracker.ai)
+            input#zip_select(type='hidden' name='zip_select')
+            input#city_select(type='hidden' name='city_select')
+            input#state_select(type='hidden' name='state_select')
+            input#require_loc(type='hidden' name='require_loc' value='1')
+            input#combo_loc(type='hidden' name='combo_loc' value='1')
+            .component-location.location-1.component-location-extended.case-intake-form__location-component
+                .address-form-field.default-hide
+                    .location-input-container-indicator.case-intake-form__location-indicator
+                        input#locationBar.required.location-input.location-input-1.case-intake-form__location-input(
+                            name='location'
+                            placeholder='Enter Zip Code or City'
+                            type='text'
+                            autocomplete='off'
+                            data-aut='ci_add-zipcode'
+                        )
+                        span#suggestProgress.case-intake-form__location-progress
+                            img.case-intake-form__location-loader(
+                                src='/img_common/intake/loading-sm.gif'
+                            )
+        input(type='hidden' name='supCatIds' value=sup_cat_ids)
+        input(type='hidden' name='catBypass' value='true')
+        input(type='hidden' name='ar' value='/home/start.do')
+        span.case-intake-form__header Choose the Issues Involved in Your Case:
+        <!--#include virtual="/bd/category-pages/template/category-list-template.php?template=checkbox&info=1&supID=!{sup_id}&selected=&skip=!{SUP_SKIP}.join()&nonFlexLimit=3" -->
+        .case-intake-form__lower-container
+            button.case-intake-form__submit.page__button.pulsing(
+                data-lm-click
+                data-lm-event-name=tracker.dataLmEventName + variant_no
+                data-lm-event-params='{"element": "CTA Form Widget"}'
+                data-aut='ci_submit-btn'
+            ) Find A Lawyer Now
+            p.case-intake-form__other-category Can't find a category?&nbsp;
+                span.case-intake-form__other-category-link.js-other-category-modal-trigger(
+                    data-toggle='modal'
+                    data-target='.other-categories__modal'
+                    data-aut='ci_otherCategories-link'
+                ) Click here

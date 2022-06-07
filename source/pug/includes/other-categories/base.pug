@@ -1,0 +1,30 @@
+.modal.fade.other-categories__modal.js-other-categories(
+    tabindex='-1'
+    role='dialog'
+    aria-hidden='true'
+)
+    .other-categories__modal-dialog.modal-dialog.modal-lg.modal-dialog-centered(
+        role='document'
+    )
+        .modal-content
+            .other-categories__modal-body.modal-generic.modal-body.js-other-categories-body
+                button.modal-generic__close(
+                    type='button'
+                    data-dismiss='modal'
+                    aria-label='Close'
+                )
+                    span(aria-hidden='true') X
+                h5.other-categories__title Other categories
+                h6.other-categories__subtitle Choose the Category That Best Fits Your Case
+
+                .other-categories__wrapper.js-other-categories-wrapper
+                    ul.other-categories__list.js-other-categories-list
+
+            .other-categories__modal-footer
+                i.other-categories__modal-footer-icon.fa.fa-chevron-down.js-other-categories-modal-footer-icon
+                |
+                | Scroll
+                |
+                span.js-other-categories-modal-footer-scroll-text down
+                |
+                | for more categories

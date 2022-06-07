@@ -1,0 +1,93 @@
+@import "bs4/root";
+@import "@bootstrap/scss/modal";
+@import "bs4/common-critical";
+@import "bs4/override";
+
+@import "@bootstrap/scss/grid";
+
+@import "common/montserrat";
+@import "common/neuton";
+
+//bs4 footer
+@import "bs4/copyright/base";
+@import "bs4/footer/base";
+@import "bs4/hero/intro2-var1";
+@import "bs4/hero/intro2-var2";
+@import "bs4/logo/base";
+@import "bs4/modal-generic/intro-pages";
+@import "bs4/modal-iframe/base";
+@import "bs4/other-categories/intro-pages";
+@import "bs4/service-menu/base";
+@import "bs4/trust-icons/intro-pages";
+
+@import "bem/autocomplete/base";
+@import "bem/breadcrumbs/intro-pages";
+@import "bem/case-intake-form/intro-pages";
+@import "bem/checklist/intro-pages";
+@import "bem/collapse/intro-pages";
+@import "bem/header/intro-pages";
+@import "bem/hero/intro-pages";
+@import "bem/page/intro-pages";
+@import "bem/main-content/intro-pages";
+@import "bem/modal-generic/base";
+@import "bem/slider/base";
+@import "bem/star-rating/base";
+@import "bem/sticky-header/lawlib";
+@import "bem/subcat-content/intro-pages";
+@import "bem/testimonials/intro-pages";
+@import "bem/top-rated/intro-pages";
+@import "bem/trust-pilot/intro-pages";
+@import "bs4/trust-icons/base";
+@import "bem/w-find-lawyers/intro-pages";
+
+@import "bem/autocomplete/intro-pages";
+@import "bs4/case-intake-form/basic-category-dropdown";
+@import "bs4/case-intake-form/intro2-var1";
+@import "bs4/case-intake-form/intro2-var2";
+@import "bs4/case-intake-form/modal";
+@import "bs4/case-intake-form/modal-intro-var";
+
+html {
+    font-size: 16px;
+}
+
+.container {
+    @include media-breakpoint-down(ss) {
+        max-width: none;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-width: 1170px;
+    }
+}
+
+.slider-dot__dot {
+    background: #d2d2d2;
+
+    &:not(:first-child) {
+        margin-left: 17px;
+    }
+}
+
+.slider-dot__dot--selected {
+    background: #524e4e;
+}
+
+.intro-category-form .case-intake-form__modal-container {
+    display: block;
+    min-height: auto;
+}
+
+.desktop-hide {
+    display: none;
+
+    @include media-breakpoint-down(ss) {
+        display: block;
+    }
+}
+
+.mobile-hide {
+    @include media-breakpoint-down(ss) {
+        display: none;
+    }
+}

@@ -1,0 +1,51 @@
+.trust-pilot {
+    padding-top: 31px;
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+        padding-top: 58px;
+    }
+}
+
+.trust-pilot__logo {
+    height: 69px;
+}
+
+.trust-pilot__title {
+    @include font-size(18px);
+
+    line-height: 24px;
+    margin-bottom: 13px;
+    margin-top: 25px;
+
+    @include media-breakpoint-up(sm) {
+        @include font-size(24px);
+
+        line-height: 31px;
+        margin: 23px auto 25px;
+        width: 560px;
+    }
+}
+
+.trust-pilot__subtitle {
+    @include font-size(16px);
+
+    margin-top: 0;
+
+    @include media-breakpoint-up(sm) {
+        @include font-size(20px);
+    }
+}
+
+.trust-pilot-v2 {
+    border-bottom: 1px solid #f0f1f2;
+    padding: 50px 0;
+
+    @include media-breakpoint-down(ss) {
+        padding: 30px 0;
+    }
+}
+
+.trust-pilot__logo-v2 {
+    margin-bottom: 30px;
+}

@@ -1,0 +1,17 @@
+-
+    var list = [
+        {score: '20', text: 'Years of helping people find the right lawyer'},
+        {score: '91%', text: 'Client satisfaction rating'},
+        {score: '5', text: 'Million cases have been posted on LegalMatch'}
+    ];
+
+ul.statistics.js-statistic-carousel
+    each item, index in list
+        if !index
+            li.statistic__item.js-statistic-carousel-item.is-active
+                .statistic__score= item.score
+                p.statistic__text= item.text
+        else
+            li.statistic__item.js-statistic-carousel-item
+                .statistic__score= item.score
+                p.statistic__text= item.text

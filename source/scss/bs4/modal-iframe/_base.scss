@@ -1,0 +1,40 @@
+.modal-iframe__body {
+  overflow: hidden;
+}
+
+/**
+ * for safari mobile only
+ * @link https://stackoverflow.com/a/47818418
+ */
+@supports (-webkit-overflow-scrolling: touch) {
+  .modal-iframe__body {
+    overflow: auto;
+  }
+}
+
+.modal-iframe__content {
+  border: none;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+}
+
+.modal-iframe__footer {
+  border: none;
+  padding: 10px 15px 40px 15px;
+
+  @include mobile-devices-landscape{
+    padding: 10px 15px 15px 15px;
+  }
+}
+
+.modal-iframe__close {
+  @include font-size(14px);
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-weight: normal;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+}

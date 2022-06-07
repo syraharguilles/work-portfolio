@@ -1,0 +1,17 @@
+.breadcrumbs {
+    padding: 0 0 14px;
+
+    @include media-breakpoint-up(sm) {
+        padding: 0 0 28px;
+    }
+}
+
+.breadcrumbs__item {
+    &::after {
+        @include icon($fa-var-chevron-right);
+
+        color: #dcdee1;
+        font-size: 12px;
+        margin: 0 10px;
+    }
+}

@@ -1,0 +1,43 @@
+form.case-intake-form.js-case-intake-form.has-validation(novalidate='')
+    .case-intake-form__wrapper
+        .case-intake-form__steps
+            .case-intake-form__steps-line
+            span.case-intake-form__step.case-intake-form__step--1 1
+            span.case-intake-form__step.case-intake-form__step--2 2
+        .case-intake-form__fields
+            .case-intake-form__field
+                label.case-intake-form__label(for='location-input') Where Do You <span class="page__nowrap">Need a Lawyer?</span>
+                .case-intake-form__error-wrapper
+                    span.case-intake-form__error.js-case-intake-error.js-case-intake-error-type-location.js-case-intake-error-location.d-none(
+                        data-aut='ci_errorZipcode'
+                    ).
+                        Please enter a valid Zip code and City
+                    span.case-intake-form__error.js-case-intake-error.js-case-intake-error-type-location.js-case-intake-error-city-list.d-none(
+                        data-aut='ci_errorZipcodeList'
+                    ).
+                        Please select a city from the list
+                .case-intake-form__location-checker.js-case-intake-form-location-checker.js-case-intake-form-location
+                    input#location-input.case-intake-form__location.case-intake-form__control.js-case-intake-location-input(
+                        aria-label='Zip Code or City Input Field'
+                        data-aut='ci_add-zipcode'
+                        value=''
+                        placeholder='Enter ZIP code or City'
+                        type='text'
+                    )
+            .case-intake-form__field--location
+                label.case-intake-form__label(for='category-dropdown') Choose a <span class="page__nowrap">Legal Category</span>
+                .case-intake-form__error-wrapper
+                    span.case-intake-form__error.js-case-intake-error.js-case-intake-error-category.d-none(
+                        data-aut='ci_errorCategory'
+                    ).
+                        Please choose a category from the list
+                include @lms/source/pug/includes/intro-pages/case-intake-form/category-dropdown
+            .case-intake-form__field--submit
+                .case-intake-form__submit-wrapper
+                    input.case-intake-form__submit.js-case-intake-submit(
+                        data-lm-click=''
+                        data-lm-event-name=PLANEVENTNAME
+                        data-lm-event-params='{"element":"CTA Form Widget"}'
+                        type='submit'
+                        value='Find a Great Lawyer'
+                    )

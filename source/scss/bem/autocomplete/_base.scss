@@ -1,0 +1,65 @@
+@import "@js-autocomplete/auto-complete";
+
+.autocomplete-suggestions {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px #aaa;
+    max-height: 210px !important;
+    overflow: auto;
+    padding: 0;
+    z-index: 999;
+}
+
+.autocomplete-suggestion {
+    @include font-size(13px);
+
+    background: none;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+    padding: 9px;
+
+    &:last-child {
+        border: 0;
+    }
+
+    &:hover,
+    &.selected {
+        background: #f3f7fb;
+        color: #3d4147;
+    }
+
+    .autocomplete-suggestion__main_cat {
+        @include font-size(10px);
+
+        color: #696969;
+    }
+}
+
+.autocomplete-suggestions.grouped .autocomplete-suggestion{
+    padding: 9px 9px 9px 19px;
+    margin: 0;
+}
+
+.autocomplete-suggestion-group {
+    @include font-size(13px);
+
+    background: #f3f3f3;
+    border-bottom: 0;
+    color: #535353;
+    font-weight: bold;
+    margin: 0;
+    padding: 9px;
+    pointer-events: none;
+
+    &:last-child {
+        border: 0;
+    }
+
+    &:hover,
+    &.selected {
+        background: #f3f3f3;
+        color: #535353;
+    }
+}

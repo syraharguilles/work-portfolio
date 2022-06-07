@@ -1,0 +1,16 @@
+#modal-iframe.modal.fade.modal-iframe.js-modal-iframe-close(
+    data-target='modal-iframe'
+    tabindex='-1'
+    role='dialog'
+    aria-hidden='true'
+)
+    .modal-dialog.modal-lg.modal-dialog-centered(role='document')
+        .modal-content
+            .modal-body.modal-iframe__body
+                iframe.modal-iframe__content
+            .modal-footer.modal-iframe__footer
+                button.modal-iframe__close.js-modal-iframe-close(
+                    type='button'
+                    data-target='modal-iframe'
+                    data-dismiss='modal'
+                ) Close

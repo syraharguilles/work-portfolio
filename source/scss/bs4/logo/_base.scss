@@ -1,0 +1,230 @@
+.logo {
+    align-self: center;
+    position: relative;
+
+    .row {
+        align-items: center;
+    }
+}
+
+.logo__link {
+    @include size(205px, 41px);
+
+    display: block;
+    position: relative;
+    text-decoration: none;
+
+    @include media-breakpoint-down(ss) {
+        margin: 0 auto;
+    }
+
+    img,
+    svg {
+        height: 41px;
+        width: 201px;
+    }
+
+    svg {
+        margin-top: 3px;
+    }
+}
+
+.logo__link--background {
+    @include size(205px, 52px);
+
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.logo__link--svg-after::after {
+    @include size(205px, 36px);
+
+    background: url("/images/logo/md.svg") top left no-repeat;
+    background-size: 100%;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.logo__link--svg-footer {
+    height: 52px;
+}
+
+.logo__link--svg-footer::after {
+    @include size(205px, 52px);
+
+    background: url("/images/logo/footer_logo.svg") top left no-repeat;
+    background-size: 100%;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.logo__link--svg-footer.is-ca-page::after {
+    background-image: url("/images/logo/LegalmatchCA.svg");
+}
+
+.logo__tagline {
+    color: #002365;
+    font-family: $font-family-sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@include media-breakpoint-down(ss) {
+    @include media-breakpoint-down(tn) {
+        .logo--mobile {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
+
+    .logo--mobile {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        max-width: none;
+
+        .logo__link-container {
+            flex: 1 85%;
+        }
+
+        .logo__link {
+            display: inline-block;
+            margin: 0;
+            text-align: left;
+        }
+    }
+
+    .logo__hamburger-menu {
+        background: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline;
+        height: 30px;
+        padding: 5px;
+        width: 35px;
+
+        &-icon {
+            &-cont {
+                display: block;
+                height: 100%;
+                position: relative;
+                width: 100%;
+
+                > span {
+                    background-color: #232222;
+                    display: block;
+                    height: 3px;
+                    position: absolute;
+                    transition: all 0.25s ease;
+                    width: 50%;
+
+                    &:nth-child(1) {
+                        left: 0;
+                        top: 0;
+                    }
+
+                    &:nth-child(2) {
+                        right: 0;
+                        top: 0;
+                    }
+
+                    &:nth-child(3) {
+                        left: 0;
+                        margin-top: -1.5px;
+                        top: 50%;
+                    }
+
+                    &:nth-child(4) {
+                        margin-top: -1.5px;
+                        right: 0;
+                        top: 50%;
+                    }
+
+                    &:nth-child(5) {
+                        bottom: 0;
+                        left: 0;
+                    }
+
+                    &:nth-child(6) {
+                        bottom: 0;
+                        right: 0;
+                    }
+
+                    &:nth-child(7) {
+                        left: 0;
+                        margin-top: -1.5px;
+                        opacity: 0;
+                        top: 50%;
+                        transform: rotate(-45deg);
+                        width: 100%;
+                    }
+
+                    &:nth-child(8) {
+                        left: 0;
+                        margin-top: -1.5px;
+                        opacity: 0;
+                        top: 50%;
+                        transform: rotate(45deg);
+                        width: 100%;
+                    }
+
+                    &:nth-child(1),
+                    &:nth-child(3),
+                    &:nth-child(5) {
+                        border-bottom-left-radius: 1.5px;
+                        border-top-left-radius: 1.5px;
+                    }
+
+                    &:nth-child(2),
+                    &:nth-child(4),
+                    &:nth-child(6) {
+                        border-bottom-right-radius: 1.5px;
+                        border-top-right-radius: 1.5px;
+                    }
+                }
+            }
+        }
+
+        &.open {
+            .logo__hamburger-menu-icon-cont {
+                > span {
+                    opacity: 0;
+
+                    &:nth-child(1) {
+                        transform: rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(-45deg);
+                    }
+
+                    &:nth-child(3) {
+                        left: -50%;
+                    }
+
+                    &:nth-child(4) {
+                        right: -50%;
+                    }
+
+                    &:nth-child(5) {
+                        transform: rotate(-45deg);
+                    }
+
+                    &:nth-child(6) {
+                        transform: rotate(45deg);
+                    }
+
+                    &:nth-child(7),
+                    &:nth-child(8) {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

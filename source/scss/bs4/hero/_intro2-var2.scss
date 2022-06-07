@@ -1,0 +1,89 @@
+.hero-intro2-var-2 {
+    align-items: center;
+    background: none #02397b;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: space-between;
+    padding: 20px 10px;
+
+    @include media-breakpoint-down(sm) {
+        display: block;
+    }
+
+    @include media-breakpoint-up(ss) {
+        padding: 41px 35px 41px 47px;
+    }
+}
+
+.hero-intro2-var-2__h1 {
+    @include font-with-fallback("Gotham-Medium", 18px);
+
+    color: #fff;
+    font-weight: normal;
+
+    @include media-breakpoint-up(ss) {
+        @include font-with-fallback("Gotham-Book", 34px);
+    }
+}
+
+.hero-intro2-var-2__h1 br {
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+
+    @include media-breakpoint-down(ss) {
+        display: none;
+    }
+}
+
+.hero-intro2-var-2__h2 {
+    @include font-with-fallback("Gotham-Book", 18px);
+
+    color: #fff;
+    font-weight: normal;
+
+    @include media-breakpoint-up(ss) {
+        @include font-size(22px);
+    }
+}
+
+.hero-intro2-var-2__left {
+    width: 46%;
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: 46%;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 54%;
+    }
+}
+
+.hero-intro2-var-2__right {
+    background: #2d3f86;
+    border: 1px solid #2e3f86;
+    color: #fff;
+    padding: 10px;
+    width: 53%;
+
+    @include media-breakpoint-up(lg) {
+        width: 53%;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 42%;
+    }
+
+    @include media-breakpoint-up(ss) {
+        padding: 30px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+}
