@@ -8,8 +8,8 @@
     - [source](https://github.com/syraharguilles/work-portfolio/tree/wordpress/source)
 
     Technologies Used:
-    - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML),
-    - [SASS](https://sass-lang.com/), 
+    - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+    - [SASS](https://sass-lang.com/)
     - [JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
     - [PHP](https://www.php.net/)
     - [Wordpress](https://wordpress.com/)
@@ -25,8 +25,8 @@
     - [source](https://github.com/syraharguilles/work-portfolio/tree/wordpress/source)
 
     Technologies Used:
-    - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML),
-    - [SASS](https://sass-lang.com/), 
+    - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+    - [SASS](https://sass-lang.com/)
     - [JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
     - [PHP](https://www.php.net/)
     - [Wordpress](https://wordpress.com/)
