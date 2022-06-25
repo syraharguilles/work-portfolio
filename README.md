@@ -11,10 +11,10 @@
 - https://github.com/syraharguilles/work-portfolio/tree/wordpress
     - Includes only the codes that are worked on.
 
-## A. Email Templates #
+## B. Email Templates #
 - https://github.com/syraharguilles/work-portfolio/tree/email-template
     - Includes only the codes that are worked on.
 
-## A. Derived Programming #
+## C. Derived Programming #
 - https://github.com/syraharguilles/work-portfolio/tree/derived-programming-languages
     - Includes only the codes that are worked on.
